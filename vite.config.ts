@@ -12,8 +12,8 @@ export default defineConfig({
         lib: {
             entry: fileURLToPath(new URL('./src/plugins.ts', import.meta.url)),
             formats: ['es', 'cjs', 'umd'],
-            name: 'vue-leaflet',
-            fileName: (fmt) => `vue-leaflet.${fmt}.js`
+            name: 'vue-leaflet-plugins',
+            fileName: (fmt) => `vue-leaflet-plugins.${fmt}.js`
         },
         rollupOptions: {
             external: ['vue', 'leaflet', /^leaflet\/.*/, '@maxel01/vue-leaflet'],
