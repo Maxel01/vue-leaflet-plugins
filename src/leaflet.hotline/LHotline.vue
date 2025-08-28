@@ -2,12 +2,7 @@
 import { markRaw, nextTick, onMounted, ref, useAttrs } from 'vue'
 import { AddLayerInjection } from '@maxel01/vue-leaflet'
 import { assertInject, propsBinder, remapEvents } from '@maxel01/vue-leaflet'
-import {
-    type HotlineEmits,
-    type HotlineProps,
-    hotlinePropsDefaults,
-    setupHotline
-} from './hotline'
+import { type HotlineEmits, type HotlineProps, hotlinePropsDefaults, setupHotline } from './hotline'
 import { Hotline } from './leaflet.hotline'
 
 /**
@@ -54,7 +49,6 @@ function useHotline() {
             leafletObject: leafletObject.value
         })
         ready.value = true
-        console.log("Mounted")
         nextTick(() => emit('ready', leafletObject.value!))
     })
     return { leafletObject, ready }

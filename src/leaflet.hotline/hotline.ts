@@ -3,23 +3,39 @@ import { type PolylineOptions } from 'leaflet'
 import type { Ref } from 'vue'
 import { Hotline } from './leaflet.hotline'
 import {
-    propsToLeafletOptions,
     type PolylineEmits,
     type PolylineProps,
     polylinePropsDefaults,
+    propsToLeafletOptions,
     setupPolyline
 } from '@maxel01/vue-leaflet'
 
 export interface HotlineProps<T extends PolylineOptions = PolylineOptions>
     extends PolylineProps<T> {
     /**
-     * @initOnly
+     * @reactive
      */
-    min: number,
+    min: number
     /**
-     * @initOnly
+     * @reactive
      */
     max: number
+    /**
+     * @reactive
+     */
+    weight: number
+    /**
+     * @reactive
+     */
+    outlineWidth: number
+    /**
+     * @reactive
+     */
+    outlineColor: string
+    /**
+     * @reactive
+     */
+    palette: Record<number, string>
 }
 
 export const hotlinePropsDefaults = {
@@ -42,7 +58,25 @@ export const setupHotline = (
     const options = propsToLeafletOptions<PolylineOptions>(props, polylineOptions)
 
     const methods = {
-        ...polylineMethods
+        ...polylineMethods,
+        setMin(min: number) {
+            leafletRef.value?.setStyle({ min })
+        },
+        setMax(max: number) {
+            leafletRef.value?.setStyle({ max })
+        },
+        setWeight(weight: number) {
+            leafletRef.value?.setStyle({ weight })
+        },
+        setOutlineWidth(outlineWidth: number) {
+            leafletRef.value?.setStyle({ outlineWidth })
+        },
+        setOutlineColor(outlineColor: number) {
+            leafletRef.value?.setStyle({ outlineColor })
+        },
+        setPalette(palette: number) {
+            leafletRef.value?.setStyle({ palette })
+        }
     }
 
     return { options, methods }
