@@ -5,6 +5,7 @@
   <div class="main-wrapper">
     <div class="menu">
       <NuxtLink to="/">Home</NuxtLink>
+      <NuxtLink to="/plugins/hotline">Leaflet.hotline</NuxtLink>
     </div>
     <div class="map-wrapper">
       <NuxtPage/>
