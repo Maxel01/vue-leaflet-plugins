@@ -7,7 +7,7 @@ import { Hotline } from './leaflet.hotline'
 
 /**
  * >
- * @demo
+ * @demo hotline {13-22}
  */
 defineOptions({})
 const props = withDefaults(defineProps<HotlineProps>(), hotlinePropsDefaults)

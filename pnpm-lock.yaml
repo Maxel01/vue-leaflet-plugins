@@ -57,6 +57,12 @@ importers:
       eslint-plugin-vue:
         specifier: ^10.3.0
         version: 10.4.0(@typescript-eslint/parser@8.41.0(eslint@9.34.0(jiti@2.5.1))(typescript@5.8.3))(eslint@9.34.0(jiti@2.5.1))(vue-eslint-parser@10.2.0(eslint@9.34.0(jiti@2.5.1)))
+      fast-glob:
+        specifier: ^3.3.3
+        version: 3.3.3
+      fs-extra:
+        specifier: ^11.3.1
+        version: 11.3.1
       jsdom:
         specifier: ^26.1.0
         version: 26.1.0
@@ -66,6 +72,9 @@ importers:
       release-it:
         specifier: ^17.11.0
         version: 17.11.0(typescript@5.8.3)
+      ts-morph:
+        specifier: ^26.0.0
+        version: 26.0.0
       typescript:
         specifier: ~5.8.3
         version: 5.8.3
@@ -100,8 +109,8 @@ importers:
         specifier: 1.0.0-beta
         version: 1.0.0-beta(leaflet@2.0.0-alpha)(vue@3.5.20(typescript@5.8.3))
       '@maxel01/vue-leaflet-plugins':
-        specifier: 0.0.1-alpha
-        version: 0.0.1-alpha(@maxel01/vue-leaflet@1.0.0-beta(leaflet@2.0.0-alpha)(vue@3.5.20(typescript@5.8.3)))(leaflet@2.0.0-alpha)(vue@3.5.20(typescript@5.8.3))
+        specifier: 0.0.1-alpha.0
+        version: 0.0.1-alpha.0(@maxel01/vue-leaflet@1.0.0-beta(leaflet@2.0.0-alpha)(vue@3.5.20(typescript@5.8.3)))(leaflet@2.0.0-alpha)(vue@3.5.20(typescript@5.8.3))
       leaflet:
         specifier: 2.0.0-alpha
         version: 2.0.0-alpha
@@ -1122,8 +1131,8 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  '@maxel01/vue-leaflet-plugins@0.0.1-alpha':
-    resolution: {integrity: sha512-uPMKDTlrpqdpX4C78H9I3zRUDccBYAY8XDfBCa0nBC+xXWC6l+N4ECgJ5i5jkBObN6w1BIV261JnnT9lYrlPZA==}
+  '@maxel01/vue-leaflet-plugins@0.0.1-alpha.0':
+    resolution: {integrity: sha512-Q9fkGbGxXQWP+GQFKoP9aHvLJF1naFdXivokRaKSbbG0sqaflVMBFIPMstvh+m4bMXPqtihoBUSgGun3tCIEiA==}
     peerDependencies:
       '@maxel01/vue-leaflet': ^1.0.0-beta
       leaflet: ^2.0.0-alpha
@@ -1940,6 +1949,9 @@ packages:
 
   '@tootallnate/quickjs-emscripten@0.23.0':
     resolution: {integrity: sha512-C5Mc6rdnsaJDjO3UpGW/CQTHtCKaYlScZTly4JIu97Jxo/odCiH0ITnDXSJPTOrEKk/ycSZ0AOgTmkDtkOsvIA==}
+
+  '@ts-morph/common@0.27.0':
+    resolution: {integrity: sha512-Wf29UqxWDpc+i61k3oIOzcUfQt79PIT9y/MWfAGlrkjg6lBC1hwDECLXPVJAhWjiGbfBCxZd65F/LIZF3+jeJQ==}
 
   '@tsconfig/node22@22.0.2':
     resolution: {integrity: sha512-Kmwj4u8sDRDrMYRoN9FDEcXD8UpBSaPQQ24Gz+Gamqfm7xxn+GBR7ge/Z7pK8OXNGyUzbSwJj+TH6B+DS/epyA==}
@@ -2785,6 +2797,9 @@ packages:
   cluster-key-slot@1.1.2:
     resolution: {integrity: sha512-RMr0FhtfXemyinomL4hrWcYJxmX6deFdCxpJzhDttxgO1+bcCnkk+9drydLVDmAMG7NE6aN/fl4F7ucU/90gAA==}
     engines: {node: '>=0.10.0'}
+
+  code-block-writer@13.0.3:
+    resolution: {integrity: sha512-Oofo0pq3IKnsFtuHqSF7TqBfr71aeyZDVJ0HpmqB7FBM2qEigL0iPONSCZSO9pE9dZTAxANe5XHG9Uy0YMv8cg==}
 
   color-convert@1.9.3:
     resolution: {integrity: sha512-QfAUtd+vFdAtFQcC8CCyYt1fYWxSqAiK2cSD6zDB8N3cpsEBAvRxp9zOGg6G/SHHJYAT88/az/IuDGALsNVbGg==}
@@ -5898,6 +5913,9 @@ packages:
   ts-map@1.0.3:
     resolution: {integrity: sha512-vDWbsl26LIcPGmDpoVzjEP6+hvHZkBkLW7JpvwbCv/5IYPJlsbzCVXY3wsCeAxAUeTclNOUZxnLdGh3VBD/J6w==}
 
+  ts-morph@26.0.0:
+    resolution: {integrity: sha512-ztMO++owQnz8c/gIENcM9XfCEzgoGphTv+nKpYNM1bgsdOVC/jRZuEBf6N+mLLDNg68Kl+GgUZfOySaRiG1/Ug==}
+
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
 
@@ -7482,7 +7500,7 @@ snapshots:
       - encoding
       - supports-color
 
-  '@maxel01/vue-leaflet-plugins@0.0.1-alpha(@maxel01/vue-leaflet@1.0.0-beta(leaflet@2.0.0-alpha)(vue@3.5.20(typescript@5.8.3)))(leaflet@2.0.0-alpha)(vue@3.5.20(typescript@5.8.3))':
+  '@maxel01/vue-leaflet-plugins@0.0.1-alpha.0(@maxel01/vue-leaflet@1.0.0-beta(leaflet@2.0.0-alpha)(vue@3.5.20(typescript@5.8.3)))(leaflet@2.0.0-alpha)(vue@3.5.20(typescript@5.8.3))':
     dependencies:
       '@maxel01/vue-leaflet': 1.0.0-beta(leaflet@2.0.0-alpha)(vue@3.5.20(typescript@5.8.3))
       leaflet: 2.0.0-alpha
@@ -8393,6 +8411,12 @@ snapshots:
   '@speed-highlight/core@1.2.7': {}
 
   '@tootallnate/quickjs-emscripten@0.23.0': {}
+
+  '@ts-morph/common@0.27.0':
+    dependencies:
+      fast-glob: 3.3.3
+      minimatch: 10.0.3
+      path-browserify: 1.0.1
 
   '@tsconfig/node22@22.0.2': {}
 
@@ -9406,6 +9430,8 @@ snapshots:
   clone@1.0.4: {}
 
   cluster-key-slot@1.1.2: {}
+
+  code-block-writer@13.0.3: {}
 
   color-convert@1.9.3:
     dependencies:
@@ -12895,6 +12921,11 @@ snapshots:
   ts-debounce@4.0.0: {}
 
   ts-map@1.0.3: {}
+
+  ts-morph@26.0.0:
+    dependencies:
+      '@ts-morph/common': 0.27.0
+      code-block-writer: 13.0.3
 
   tslib@2.8.1: {}
 

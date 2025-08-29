@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { LMap, LTileLayer } from '@maxel01/vue-leaflet'
 import { LHotline } from '@maxel01/vue-leaflet-plugins'
-import { coords } from '~/utils/leaflet.hotline/coords'
+import { coords } from '../../utils/leaflet.hotline/coords'
 
 const weight = ref(5)
 const outlineWidth = ref(1)

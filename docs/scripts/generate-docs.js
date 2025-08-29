@@ -22,14 +22,15 @@ async function generate() {
         })
 
         const name = doc.displayName || path.basename(file, '.vue')
-        const markdownPath = path.join(outputDir, `${toKebabCase(name)}.md`)
+        const pluginName = file.split('/')[1]
+        const markdownPath = path.join(outputDir, pluginName, `${toKebabCase(name)}.md`)
 
         let markdown = `# ${name}\n\n${doc.description || ''}\n\n`
         markdown = '---\noutline: deep\n---\n\n'
         markdown += `# ${doc.displayName}\n\n`
         markdown += `${doc.description}\n\n`
 
-        markdown = writeDemo(doc, markdown)
+        markdown = writeDemo(doc, markdown, pluginName)
         markdown = writeProps(doc, markdown)
 
         // Emits
@@ -68,7 +69,7 @@ async function generate() {
     }
 }
 
-function writeDemo(doc, markdown) {
+function writeDemo(doc, markdown, pluginName) {
     if (doc.tags.demo) {
         const demo = doc.tags.demo[0]
         const [demoName, highlight] = demo.description.split(' ')
@@ -81,7 +82,7 @@ function writeDemo(doc, markdown) {
             `    <demo-${demoName} />\n` +
             '</div>\n\n' +
             `\`\`\`vue${highlight}\n` +
-            `<!--@include: ../../playground/app/pages/${demoName}.vue -->\n` +
+            `<!--@include: ../../../playground/app/pages/${pluginName}/${demoName}.vue -->\n` +
             '```\n\n'
     }
     return markdown
