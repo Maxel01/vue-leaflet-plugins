@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { markRaw, nextTick, onMounted, ref, useAttrs } from 'vue'
-import { AddLayerInjection } from '@maxel01/vue-leaflet'
-import { assertInject, propsBinder, remapEvents } from '@maxel01/vue-leaflet'
+import { AddLayerInjection, assertInject, propsBinder, remapEvents } from '@maxel01/vue-leaflet'
 import { type HotlineEmits, type HotlineProps, hotlinePropsDefaults, setupHotline } from './hotline'
 import { Hotline } from './leaflet.hotline'
 
