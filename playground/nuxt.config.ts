@@ -1,7 +1,8 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import path from 'node:path'
+import { alias } from '../alias.config'
 
-const version: 'local' | 'dist' | 'npm' = 'local'
+const version: 'local' | 'dist' | 'npm' = 'npm'
 const vue_leaflet_plugins = {
     local: path.resolve(__dirname, '../src/plugins'),
     dist: '@dist/vue-leaflet-plugins',
@@ -21,7 +22,8 @@ export default defineNuxtConfig({
     vite: {
         resolve: {
             alias: {
-                '@maxel01/vue-leaflet-plugins': vue_leaflet_plugins[version]
+                '@maxel01/vue-leaflet-plugins': vue_leaflet_plugins[version],
+                ...alias
             }
         }
     }
