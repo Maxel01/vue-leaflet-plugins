@@ -10,6 +10,14 @@
   ],
   "compilerOptions": {
     "baseUrl": ".",
+    "paths": {
+      "@/playground/*": [
+        "./playground/*"
+      ],
+      "@/*": [
+        "src/*"
+      ]
+    },
     /* Common type-checking */
     // vite provides types but is not under @types, so their types cannot be discovered
     // note: also see https://vite.dev/guide/features.html#client-types

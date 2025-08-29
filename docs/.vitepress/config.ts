@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { alias } from '../../alias.config'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -6,6 +7,11 @@ export default defineConfig({
     description: 'Documentation for the Vue Leaflet Plugins module',
     head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
     base: '/vue-leaflet-plugins/',
+    vite: {
+        resolve: {
+            alias
+        }
+    },
     themeConfig: {
         // https://vitepress.dev/reference/default-theme-config
         nav: [
@@ -24,22 +30,16 @@ export default defineConfig({
             },
             {
                 text: 'Guide',
-                items: [
-
-                ]
+                items: []
             },
             {
                 text: 'Components',
                 collapsed: true,
-                items: [
-
-                ]
+                items: [{ text: 'LHotline', link: '/components/leaflet.hotline/l-hotline' }]
             },
             {
                 text: 'About',
-                items: [
-                    { text: 'Q&A', link: '/about/q&a' }
-                ]
+                items: [{ text: 'Q&A', link: '/about/q&a' }]
             }
         ],
 

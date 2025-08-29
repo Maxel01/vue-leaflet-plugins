@@ -1,13 +1,16 @@
-import {fileURLToPath, URL} from 'node:url'
+import { fileURLToPath, URL } from 'node:url'
 
-import {defineConfig} from 'vite'
+import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import dts from 'vite-plugin-dts'
-
+import { alias } from './alias.config'
 
 // https://vite.dev/config/
 export default defineConfig({
-    plugins: [vue(), dts({tsconfigPath: './tsconfig.build.json'})],
+    plugins: [vue(), dts({ tsconfigPath: './tsconfig.build.json' })],
+    resolve: {
+        alias
+    },
     build: {
         lib: {
             entry: fileURLToPath(new URL('./src/plugins.ts', import.meta.url)),
@@ -23,7 +26,7 @@ export default defineConfig({
                     vue: 'Vue',
                     leaflet: 'L'
                 }
-            },
+            }
         }
     }
 })
