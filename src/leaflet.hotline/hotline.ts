@@ -15,27 +15,23 @@ export interface HotlineProps<T extends PolylineOptions = PolylineOptions>
     /**
      * @reactive
      */
-    min: number
+    min?: number
     /**
      * @reactive
      */
-    max: number
+    max?: number
     /**
      * @reactive
      */
-    weight: number
+    outlineWidth?: number
     /**
      * @reactive
      */
-    outlineWidth: number
+    outlineColor?: string
     /**
      * @reactive
      */
-    outlineColor: string
-    /**
-     * @reactive
-     */
-    palette: Record<number, string>
+    palette?: Record<number, string>
 }
 
 export const hotlinePropsDefaults = {
@@ -64,9 +60,6 @@ export const setupHotline = (
         },
         setMax(max: number) {
             leafletRef.value?.setStyle({ max })
-        },
-        setWeight(weight: number) {
-            leafletRef.value?.setStyle({ weight })
         },
         setOutlineWidth(outlineWidth: number) {
             leafletRef.value?.setStyle({ outlineWidth })

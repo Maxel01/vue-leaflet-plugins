@@ -43,12 +43,12 @@ const smoothFactor = ref(1)
     <aside>
         <label>
             <span>Weight - </span>
-            1 <input v-model="weight" type="range" min="1" max="16" /> 16
+            1 <input v-model.number="weight" type="range" min="1" max="16" /> 16
         </label>
         <br />
         <label>
             <span>Outline width - </span>
-            0 <input v-model="outlineWidth" type="range" min="0" max="8" /> 8
+            0 <input v-model.number="outlineWidth" type="range" min="0" max="8" /> 8
         </label>
         <label>
             <span>Outline color</span>
@@ -57,11 +57,11 @@ const smoothFactor = ref(1)
         <br />
         <label>
             <span>Min - </span>
-            100 <input v-model="min" type="range" min="100" max="250" step="5" /> 250
+            100 <input v-model.number="min" type="range" min="100" max="250" step="5" /> 250
         </label>
         <label>
             <span>Max - </span>
-            250 <input v-model="max" type="range" min="250" max="500" step="5" /> 500
+            250 <input v-model.number="max" type="range" min="250" max="500" step="5" /> 500
         </label>
         <p class="muted">
             The range of the z values is around 150 to 350. All values below the minimum get
@@ -83,7 +83,7 @@ const smoothFactor = ref(1)
         </label>
         <label>
             <span>Smooth factor - </span>
-            0 <input type="range" v-model="smoothFactor" min="0" max="10" /> 10
+            0 <input v-model.number="smoothFactor" type="range" min="0" max="10" /> 10
         </label>
     </aside>
 </template>

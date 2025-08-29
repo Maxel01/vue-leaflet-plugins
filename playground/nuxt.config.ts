@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 import path from 'node:path'
 
-const version: 'local' | 'dist' | 'npm' = 'dist'
+const version: 'local' | 'dist' | 'npm' = 'local'
 const vue_leaflet_plugins = {
     local: path.resolve(__dirname, '../src/plugins'),
     dist: '@dist/vue-leaflet-plugins',
