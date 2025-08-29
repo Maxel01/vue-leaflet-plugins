@@ -13,22 +13,27 @@ import {
 export interface HotlineProps<T extends PolylineOptions = PolylineOptions>
     extends PolylineProps<T> {
     /**
+     * Minimum z value
      * @reactive
      */
     min?: number
     /**
+     * Maximum z value
      * @reactive
      */
     max?: number
     /**
+     * The width of the outline
      * @reactive
      */
     outlineWidth?: number
     /**
+     * The color of the outline
      * @reactive
      */
     outlineColor?: string
     /**
+     * The color palette
      * @reactive
      */
     palette?: Record<number, string>

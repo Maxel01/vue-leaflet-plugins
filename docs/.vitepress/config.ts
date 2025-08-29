@@ -30,22 +30,16 @@ export default defineConfig({
             },
             {
                 text: 'Guide',
-                items: [
-
-                ]
+                items: []
             },
             {
                 text: 'Components',
                 collapsed: true,
-                items: [
-
-                ]
+                items: [{ text: 'LHotline', link: '/components/leaflet.hotline/l-hotline' }]
             },
             {
                 text: 'About',
-                items: [
-                    { text: 'Q&A', link: '/about/q&a' }
-                ]
+                items: [{ text: 'Q&A', link: '/about/q&a' }]
             }
         ],
 
