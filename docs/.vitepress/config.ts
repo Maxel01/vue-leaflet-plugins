@@ -38,7 +38,7 @@ export default defineConfig({
             {
                 text: 'Components',
                 collapsed: true,
-                items: [{ text: 'LHotline', link: '/components/leaflet.hotline/l-hotline' }]
+                items: [{ text: 'LHotline', link: '/plugins/leaflet.hotline/l-hotline' }]
             },
             {
                 text: 'About',

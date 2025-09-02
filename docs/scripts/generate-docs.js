@@ -12,7 +12,7 @@ const __dirname = path.dirname(__filename)
 
 async function generate() {
     const componentFiles = await fg('src/**/*.vue')
-    const outputDir = path.resolve(__dirname, '../components')
+    const outputDir = path.resolve(__dirname, '../plugins')
     await emptyLFilesOnly(outputDir)
 
     for (const file of componentFiles) {
