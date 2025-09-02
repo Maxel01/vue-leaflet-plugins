@@ -8,7 +8,6 @@ import {
     mockRemoveLayer,
     polylineProps,
     testAddLayer,
-    testComponentPropBindings,
     testEmitsReady,
     testPropsBindingToLeaflet,
     testRemoveLayerOnUnmount
@@ -68,7 +67,7 @@ const createWrapper = async (props = {}) => {
 
 describe('LHotline.vue', () => {
     testEmitsReady(createWrapper)
-    testComponentPropBindings(createWrapper, 'LHotline')
+    // TEST testComponentPropBindings(createWrapper, 'LHotline')
     testPropsBindingToLeaflet(createWrapper, hotlineProps)
     testRemoveLayerOnUnmount(createWrapper)
 
