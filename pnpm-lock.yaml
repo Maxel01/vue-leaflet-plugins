@@ -19,8 +19,8 @@ importers:
         specifier: ^19.8.1
         version: 19.8.1
       '@maxel01/vue-leaflet':
-        specifier: link:../vue-leaflet
-        version: link:../vue-leaflet
+        specifier: ^1.0.0-beta
+        version: 1.0.0-beta(leaflet@2.0.0-alpha)(vue@3.5.20(typescript@5.8.3))
       '@release-it/conventional-changelog':
         specifier: ^8.0.2
         version: 8.0.2(release-it@17.11.0(typescript@5.8.3))
