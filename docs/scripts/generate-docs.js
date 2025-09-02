@@ -11,7 +11,7 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 async function generate() {
-    const componentFiles = await fg('src/**/*.vue')
+    const componentFiles = await fg(['src/**/*.vue', '!src/plugin-template/**/*.vue'])
     const outputDir = path.resolve(__dirname, '../plugins')
     await emptyLFilesOnly(outputDir)
 
