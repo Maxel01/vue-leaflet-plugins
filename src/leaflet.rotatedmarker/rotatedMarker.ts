@@ -9,20 +9,19 @@ import {
 import type {
     RotatedMarker,
     RotatedMarkerOptions
-} from '@/leaflet.rotatedmarker/leaflet.rotatedMarker.ts'
+} from '@/leaflet.rotatedmarker/leaflet.rotatedMarker'
 
-export interface RotatedMarkerProps
-    extends MarkerProps {
+export interface RotatedMarkerProps extends MarkerProps {
     /**
      * The rotation angle
      * @reactive
      */
     rotationAngle?: number
     /**
-     * The rotation anchor
+     * The rotation origin
      * @reactive
      */
-    rotationAnchor?: number
+    rotationOrigin?: [number, number]
 }
 
 export const rotatedMarkerPropsDefaults = {
