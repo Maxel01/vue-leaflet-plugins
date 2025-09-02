@@ -10,6 +10,7 @@ import type {
     RotatedMarker,
     RotatedMarkerOptions
 } from '@/leaflet.rotatedmarker/leaflet.rotatedMarker'
+import type { PointExpression } from 'leaflet'
 
 export interface RotatedMarkerProps extends MarkerProps {
     /**
@@ -21,7 +22,7 @@ export interface RotatedMarkerProps extends MarkerProps {
      * The rotation origin
      * @reactive
      */
-    rotationOrigin?: [number, number]
+    rotationOrigin?: PointExpression | string
 }
 
 export const rotatedMarkerPropsDefaults = {

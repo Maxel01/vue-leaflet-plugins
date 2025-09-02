@@ -9,10 +9,11 @@ import {
 
 export interface RotatedMarkerOptions extends MarkerOptions {
     rotationAngle?: number
-    rotationOrigin?: PointExpression
+    rotationOrigin?: PointExpression | string
 }
 
 export class RotatedMarker extends Marker {
+    declare options: RotatedMarkerOptions
     constructor(latlng: LatLngExpression, options: RotatedMarkerOptions = {}) {
         super(latlng, options)
         Util.setOptions(this, options)
