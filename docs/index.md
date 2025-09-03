@@ -3,24 +3,30 @@
 layout: home
 
 hero:
-  name: "Vue Leaflet"
-  text: "Maps without the hassle"
+  name: "Vue Leaflet Plugins"
+  text: "Extend vue-leaflet with powerful Leaflet v2 plugins"
   image:
     src: /logo.png
-    alt: Vue Leaflet Logo
+    alt: Vue Leaflet Plugins Logo
   actions:
     - theme: brand
       text: Quick start
       link: /getting-started/installation
     - theme: alt
-      text: Components
-      link: /components/introduction
+      text: Available Plugins
+      link: /plugins/introduction
 
 features:
-  - title: Fully SSR compatible ⚙️
-    details: SSR works out of the box.
-  - title: Efficient Tree shaking 🚀
-    details: Load only the components that you need
-  - title: Typescript support 🦺
-    details: Full typescript support.
+  - title: Seamless Integration 🔌
+    details: Works out of the box with vue-leaflet
+    link: 'https://github.com/Maxel01/vue-leaflet'
+    linkText: '@maxel01/vue-leaflet'
+  - title: SSR & Nuxt Ready ⚙️
+    details: Full Server-Side Rendering support, tested with Nuxt playground.
+  - title: Efficient Tree Shaking 🚀
+    details: Import only what you need. One package, multiple plugins — no more juggling different dependencies.
+  - title: Interactive Playground 🧪
+    details: Try plugins live in the docs or explore SSR with the Nuxt playground.
+  - title: TypeScript Support 🦺
+    details: Strongly typed components and plugin props.
 ---

@@ -1,18 +1,17 @@
 <script setup lang="ts">
 import { markRaw, nextTick, onMounted, ref, useAttrs } from 'vue'
 import { AddLayerInjection, assertInject, propsBinder, remapEvents } from '@maxel01/vue-leaflet'
-import { type HotlineEmits, type HotlineProps, hotlinePropsDefaults, setupHotline } from './hotline'
-import { Hotline } from './leaflet.hotline'
+import { setupTemplate, type Template, type TemplateProps, templatePropsDefaults } from '@/plugin-template/template.ts'
 
 /**
- * > A polyline with colored gradients.
- * @demo hotline {13-22}
+ * > A Leaflet plugin for ...
+ * @demo template {13-22}
  */
 defineOptions({})
-const props = withDefaults(defineProps<HotlineProps>(), hotlinePropsDefaults)
-const emit = defineEmits<HotlineEmits>()
+const props = withDefaults(defineProps<TemplateProps>(), templatePropsDefaults)
+const emit = defineEmits<TemplateProps>()
 
-const { ready, leafletObject } = useHotline()
+const { ready, leafletObject } = useTemplate()
 defineExpose({
     /**
      * Indicates whether the component and its underlying Leaflet object are fully initialized.
@@ -26,16 +25,16 @@ defineExpose({
     leafletObject
 })
 
-function useHotline() {
-    const leafletObject = ref<Hotline>()
+function useTemplate() {
+    const leafletObject = ref<Template>()
     const ready = ref(false)
 
     const addLayer = assertInject(AddLayerInjection)
 
-    const { options, methods } = setupHotline(props, leafletObject, emit)
+    const { options, methods } = setupTemplate(props, leafletObject, emit)
 
     onMounted(async () => {
-        leafletObject.value = markRaw<Hotline>(new Hotline(props.latLngs, options))
+        leafletObject.value = markRaw<Template>(new Template(..., options))
 
         const { listeners } = remapEvents(useAttrs())
         leafletObject.value.on(listeners)

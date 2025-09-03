@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref, reactive, computed } from 'vue'
 import { LMap, LTileLayer } from '@maxel01/vue-leaflet'
 import { LHotline } from '@maxel01/vue-leaflet-plugins'
 import { coords } from '../../utils/leaflet.hotline/coords'

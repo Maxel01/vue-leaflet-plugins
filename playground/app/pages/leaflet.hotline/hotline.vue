@@ -4,7 +4,7 @@ import { LHotline } from '@maxel01/vue-leaflet-plugins'
 </script>
 
 <template>
-    <LMap :zoom="9" :center="[47.41322, -1.219482]">
+    <LMap :zoom="9" :center="[47.31322, -1.319482]">
         <LTileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             layer-type="base"

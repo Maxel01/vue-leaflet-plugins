@@ -5,7 +5,7 @@ import { alias } from '../../alias.config'
 export default defineConfig({
     title: 'Vue Leaflet Plugins',
     description: 'Documentation for the Vue Leaflet Plugins module',
-    head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+    head: [['link', { rel: 'icon', href: '/vue-leaflet-plugins/favicon.ico' }]],
     base: '/vue-leaflet-plugins/',
     vite: {
         resolve: {
@@ -17,7 +17,9 @@ export default defineConfig({
         nav: [
             { text: 'Home', link: '/' },
             { text: 'Quick Start', link: '/getting-started/installation' },
-            { text: 'Components', link: '/components/introduction' }
+            { text: 'Guide', link: '/guide' },
+            { text: 'Plugins', link: '/plugins/' },
+            { text: 'Contribution', link: '/getting-started/contribution' }
         ],
 
         sidebar: [
@@ -25,7 +27,8 @@ export default defineConfig({
                 text: 'Getting Started',
                 items: [
                     { text: 'Installation', link: '/getting-started/installation' },
-                    { text: 'Usage', link: '/getting-started/usage' }
+                    { text: 'Usage', link: '/getting-started/usage' },
+                    { text: 'Contribution', link: '/getting-started/contribution' }
                 ]
             },
             {
@@ -33,9 +36,22 @@ export default defineConfig({
                 items: []
             },
             {
-                text: 'Components',
-                collapsed: true,
-                items: [{ text: 'LHotline', link: '/components/leaflet.hotline/l-hotline' }]
+                text: 'Plugins',
+                collapsed: false,
+                items: [
+                    {
+                        text: 'Introduction',
+                        link: '/plugins/introduction'
+                    },
+                    {
+                        text: 'Leaflet.Hotline',
+                        link: '/plugins/leaflet.hotline/'
+                    },
+                    {
+                        text: 'Leaflet.RotatedMarker',
+                        link: '/plugins/leaflet.rotatedmarker/'
+                    }
+                ]
             },
             {
                 text: 'About',

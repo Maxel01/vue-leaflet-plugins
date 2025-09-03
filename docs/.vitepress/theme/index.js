@@ -8,9 +8,9 @@ export default {
         const components = import.meta.glob('@/playground/app/pages/**/*.vue', { eager: true })
         for (const [path, module] of Object.entries(components)) {
             const name = 'demo-' + path
-                .split('/')
-                .pop()
                 .replace(/\.vue$/, '')
+                .split('/')
+                .slice(-2).join('-')
             app.component(name, module.default)
         }
     }
