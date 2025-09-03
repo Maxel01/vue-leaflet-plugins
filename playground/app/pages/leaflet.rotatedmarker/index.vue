@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref, computed } from 'vue'
 import { LMap, LTileLayer } from '@maxel01/vue-leaflet'
 import { LRotatedMarker } from '@maxel01/vue-leaflet-plugins'
 
