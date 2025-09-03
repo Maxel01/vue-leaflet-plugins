@@ -1,12 +1,16 @@
-# Leaflet.hotline
+---
+title: Leaflet.Hotline
+---
+
+# 🔌Leaflet.Hotline
 
 A Leaflet plugin for drawing colored gradients along polylines. This is useful for visualising values along a course, for example: elevation, velocity, or heart rate.
 
-## Available Components
+## 🧩 Available Components
 
 - [`LHotline`](/plugins/leaflet.hotline/l-hotline)
 
-## Playground
+## 🧪 Playground
 
 <script>
 import "leaflet/dist/leaflet.css";

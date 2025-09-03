@@ -26,8 +26,8 @@ async function generate() {
         const markdownPath = path.join(outputDir, pluginName, `${toKebabCase(name)}.md`)
 
         let markdown = `# ${name}\n\n${doc.description || ''}\n\n`
-        markdown = '---\noutline: deep\n---\n\n'
-        markdown += `# ${doc.displayName}\n\n`
+        markdown = `---\noutline: deep\ntitle: ${doc.displayName}\n---\n\n`
+        markdown += `# 🧩 ${doc.displayName}\n\n`
         markdown += `${doc.description}\n\n`
 
         markdown = writeDemo(doc, markdown, pluginName)
@@ -45,7 +45,7 @@ async function generate() {
 
         // Slots
         if (doc.slots?.length) {
-            markdown += '## Slots\n\n| Name | Description |\n| --- | --- |\n'
+            markdown += '## 🎯 Slots\n\n| Name | Description |\n| --- | --- |\n'
             for (const slot of doc.slots) {
                 markdown += `| \`${slot.name}\` | ${slot.description || '-'} |\n`
             }
@@ -54,7 +54,7 @@ async function generate() {
 
         // Exposes
         if (doc.expose?.length) {
-            markdown += '## Exposes\n\n| Name | Type | Description |\n| --- | --- | --- |\n'
+            markdown += '## 🧭 Exposes\n\n| Name | Type | Description |\n| --- | --- | --- |\n'
             for (const expose of doc.expose) {
                 const type = expose.tags?.find((i) => i.title === 'type')?.type?.name || '-'
                 markdown += `| \`${expose.name}\` | \`${type}\` | ${expose.description || '-'} |\n`
@@ -74,7 +74,7 @@ function writeDemo(doc, markdown, pluginName) {
         const demo = doc.tags.demo[0]
         const [demoName, highlight] = demo.description.split(' ')
         markdown +=
-            '## Demo\n\n' +
+            '## 🧪 Demo\n\n' +
             '<script>\n' +
             'import "leaflet/dist/leaflet.css";\n' +
             '</script>\n\n' +
@@ -108,7 +108,7 @@ function writeProps(doc, markdown) {
             return levelDiff !== 0 ? levelDiff : a[0].localeCompare(b[0])
         })
 
-        markdown += '## Props\n\n'
+        markdown += '## ⚙️ Props\n\n'
 
         let skip = false
         if (sortedGroups.length > 0 && sortedGroups[0][1].level > 0) {
@@ -133,7 +133,7 @@ function writeProps(doc, markdown) {
                 }
             }
             if (group.level > 0) markdown += '\n</details>\n\n'
-            else markdown += '\n### Inherited props\n'
+            else markdown += '\n### 🔗 Inherited props\n'
         }
     }
     return markdown

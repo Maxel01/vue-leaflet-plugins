@@ -1,12 +1,16 @@
-# Leaflet.RotatedMarker
+---
+title: Leaflet.RotatedMarker
+---
+
+# 🔌 Leaflet.RotatedMarker
 
 Enables rotation of marker icons in Leaflet.
 
-## Available Components
+## 🧩 Available Components
 
 - [`LRotatedMarker`](/plugins/leaflet.rotatedmarker/l-rotated-marker)
 
-## Playground
+## 🧪 Playground
 
 <script>
 import "leaflet/dist/leaflet.css";
