@@ -40,8 +40,16 @@ export default defineConfig({
                 collapsed: false,
                 items: [
                     {
+                        text: 'Introduction',
+                        link: '/plugins/introduction'
+                    },
+                    {
                         text: 'Leaflet.Hotline',
-                        link: '/plugins/leaflet.hotline/index',
+                        link: '/plugins/leaflet.hotline/'
+                    },
+                    {
+                        text: 'Leaflet.RotatedMarker',
+                        link: '/plugins/leaflet.rotatedmarker/'
                     }
                 ]
             },

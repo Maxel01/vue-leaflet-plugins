@@ -14,7 +14,7 @@ hero:
       link: /getting-started/installation
     - theme: alt
       text: Available Plugins
-      link: /plugins
+      link: /plugins/introduction
 
 features:
   - title: Seamless Integration 🔌
