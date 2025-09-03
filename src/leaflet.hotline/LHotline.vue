@@ -5,7 +5,7 @@ import { type HotlineEmits, type HotlineProps, hotlinePropsDefaults, setupHotlin
 import { Hotline } from './leaflet.hotline'
 
 /**
- * > A Leaflet plugin for drawing colored gradients along polylines.
+ * > A polyline with colored gradients.
  * @demo hotline {13-22}
  */
 defineOptions({})

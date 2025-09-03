@@ -79,7 +79,7 @@ function writeDemo(doc, markdown, pluginName) {
             'import "leaflet/dist/leaflet.css";\n' +
             '</script>\n\n' +
             '<div class="demo">\n' +
-            `    <demo-${demoName} />\n` +
+            `    <demo-${pluginName}-${demoName} />\n` +
             '</div>\n\n' +
             `\`\`\`vue${highlight}\n` +
             `<!--@include: ../../../playground/app/pages/${pluginName}/${demoName}.vue -->\n` +
