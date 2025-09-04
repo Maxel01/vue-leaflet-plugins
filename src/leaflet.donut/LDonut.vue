@@ -11,8 +11,8 @@ import {
 import { Donut } from '@/libs/leaflet.donut/leaflet.donut'
 
 /**
- * > A Leaflet plugin for ...
- * @demo template {13-22}
+ * > A Leaflet plugin for drawing donuts.
+ * @demo donut {3,13}
  */
 defineOptions({})
 const props = withDefaults(defineProps<DonutProps>(), donutPropsDefaults)
@@ -27,7 +27,7 @@ defineExpose({
     ready,
     /**
      * The underlying Leaflet instance. Can be used to directly interact with the Leaflet API (e.g. calling methods or accessing internal state).
-     * @type {Ref<Hotline \| undefined>}
+     * @type {Ref<Donut \| undefined>}
      */
     leafletObject
 })
@@ -61,5 +61,10 @@ function useDonut() {
 </script>
 
 <template>
-    <div></div>
+    <div v-if="ready" style="display: none">
+        <!--
+        @slot Used to inject Leaflet child components like `<LPopup>` or `<LTooltip>` into the `LDonut`.
+        -->
+        <slot />
+    </div>
 </template>

@@ -54,5 +54,10 @@ function useTemplate() {
 </script>
 
 <template>
-    <div></div>
+    <div v-if="ready" style="display: none">
+        <!--
+        @slot Used to inject Leaflet child components like `<LPopup>` or `<LTooltip>` into the `LTemplate`.
+        -->
+        <slot />
+    </div>
 </template>

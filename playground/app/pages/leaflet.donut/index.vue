@@ -6,7 +6,7 @@ import { ref } from 'vue'
 const radius = ref(2000)
 const innerRadius = ref(500)
 const innerRadiusPercent = ref(0.5)
-const innerRadiusAsPercent = ref(true)
+const innerRadiusAsPercent = ref(false)
 </script>
 
 <template>
@@ -31,7 +31,15 @@ const innerRadiusAsPercent = ref(true)
         <br />
         <label>
             <span>Inner Radius - </span>
-            0 <input v-model.number="innerRadius" type="range" min="0" max="1000" /> 1000
+            0
+            <input
+                v-model.number="innerRadius"
+                type="range"
+                min="0"
+                max="1000"
+                :disabled="innerRadiusAsPercent"
+            />
+            1000
         </label>
         <br />
         <label>
@@ -42,7 +50,15 @@ const innerRadiusAsPercent = ref(true)
         <label>
             <span>Inner Radius in % - </span>
             0
-            <input v-model.number="innerRadiusPercent" type="range" min="0" max="1" step="0.02" /> 1
+            <input
+                v-model.number="innerRadiusPercent"
+                type="range"
+                min="0"
+                max="1"
+                step="0.02"
+                :disabled="!innerRadiusAsPercent"
+            />
+            100
         </label>
     </aside>
 </template>
