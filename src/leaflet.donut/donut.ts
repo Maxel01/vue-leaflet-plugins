@@ -6,7 +6,7 @@ import {
     propsToLeafletOptions,
     setupCircle
 } from '@maxel01/vue-leaflet'
-import {Donut} from '@/libs/leaflet.donut/leaflet.donut'
+import { Donut } from '@/libs/leaflet.donut/leaflet.donut'
 
 export interface DonutProps extends CircleProps {
     /**
