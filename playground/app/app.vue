@@ -2,40 +2,42 @@
 </script>
 
 <template>
-  <div class="main-wrapper">
-    <div class="menu">
-      <NuxtLink to="/">Home</NuxtLink>
-      <NuxtLink to="/leaflet.hotline">Leaflet.hotline</NuxtLink>
-      <NuxtLink to="/leaflet.hotline/hotline">LHotline</NuxtLink>
+    <div class="main-wrapper">
+        <div class="menu">
+            <NuxtLink to="/">Home</NuxtLink>
+            <NuxtLink to="/leaflet.hotline">Leaflet.Hotline</NuxtLink>
+            <NuxtLink to="/leaflet.hotline/hotline">LHotline</NuxtLink>
+            <NuxtLink to="/leaflet.rotatedmarker">Leaflet.RotatedMarker</NuxtLink>
+            <NuxtLink to="/leaflet.rotatedmarker/rotated-marker">LRotatedMarker</NuxtLink>
+        </div>
+        <div class="map-wrapper">
+            <NuxtPage />
+        </div>
     </div>
-    <div class="map-wrapper">
-      <NuxtPage/>
-    </div>
-  </div>
 </template>
 
 <style scoped>
 .main-wrapper {
-  display: flex;
+    display: flex;
 }
 
 .menu {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
 }
 
 .menu a {
-  padding: 0.25rem 0.5rem;
-  text-decoration: none;
-  font-family: Arial, Helvetica, sans-serif;
+    padding: 0.25rem 0.5rem;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .menu .router-link-exact-active {
-  background-color: lightgray;
+    background-color: lightgray;
 }
 
 .map-wrapper {
-  height: 75vh;
-  width: 100%;
+    height: 75vh;
+    width: 100%;
 }
 </style>

@@ -1,19 +1,14 @@
-import {
-    type LatLngExpression,
-    Marker,
-    type MarkerOptions,
-    Point,
-    type PointExpression,
-    Util
-} from 'leaflet'
+import { type LatLngExpression, Marker, type MarkerOptions, Point, Util } from 'leaflet'
 
 export interface RotatedMarkerOptions extends MarkerOptions {
     rotationAngle?: number
-    rotationOrigin?: PointExpression | string
+    rotationOrigin?: string
 }
 
 export class RotatedMarker extends Marker {
     declare options: RotatedMarkerOptions
+    declare update: () => void
+
     constructor(latlng: LatLngExpression, options: RotatedMarkerOptions = {}) {
         super(latlng, options)
         Util.setOptions(this, options)
@@ -21,6 +16,7 @@ export class RotatedMarker extends Marker {
         const iconOptions = options.icon?.options
         const iconAnchor = iconOptions?.iconAnchor
 
+        // @ts-ignore
         const anchorStr = iconAnchor ? `${iconAnchor[0]}px ${iconAnchor[1]}px` : undefined
 
         this.options.rotationOrigin = options.rotationOrigin || anchorStr || 'center bottom'
@@ -31,19 +27,19 @@ export class RotatedMarker extends Marker {
         })
     }
 
-    _initIcon() {
-        super['_initIcon']()
-    }
-
     _setPos(pos: Point) {
-        super['_setPos'](pos)
+        // @ts-ignore
+        super._setPos(pos)
         this._applyRotation()
     }
 
     private _applyRotation() {
         if (this.options.rotationAngle) {
-            this._icon.style['transformOrigin'] = this.options.rotationOrigin
-            this._icon.style['transform'] += ` rotate(${this.options.rotationAngle}deg)`
+            const _icon = super.getElement()
+            if (_icon) {
+                _icon.style.transformOrigin = this.options.rotationOrigin || ''
+                _icon.style.transform += ` rotate(${this.options.rotationAngle}deg)`
+            }
         }
     }
 
