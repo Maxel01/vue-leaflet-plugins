@@ -16,7 +16,7 @@ export default mergeConfig(
             coverage: {
                 provider: 'v8',
                 include: ['src/**'],
-                exclude: ['src/libs', 'src/plugin-template']
+                exclude: ['src/libs', 'src/**/libs', 'src/plugin-template']
             }
         }
     })

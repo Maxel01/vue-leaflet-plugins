@@ -52,6 +52,10 @@ export default defineConfig({
                         link: '/plugins/leaflet.hotline/'
                     },
                     {
+                        text: 'Leaflet.MarkerCluster',
+                        link: '/plugins/leaflet.markercluster/'
+                    },
+                    {
                         text: 'Leaflet.RotatedMarker',
                         link: '/plugins/leaflet.rotatedmarker/'
                     }
