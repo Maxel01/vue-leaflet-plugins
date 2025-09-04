@@ -3,6 +3,7 @@
   "include": [
     "src"
   ],
+  "exclude": ["src/plugin-template"],
   "compilerOptions": {
     "declaration": true,
     "emitDeclarationOnly": true,
