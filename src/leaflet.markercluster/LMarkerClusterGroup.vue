@@ -13,8 +13,8 @@ import 'leaflet.markercluster/dist/MarkerCluster.css'
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
 
 /**
- * > A Leaflet plugin for ...
- * @demo markerCluster {13-22}
+ * > Provides Beautiful Animated Marker Clustering functionality for Leaflet, a JS library for interactive maps.
+ * @demo marker-cluster-group {9-23,33-39}
  */
 defineOptions({})
 const props = withDefaults(defineProps<MarkerClusterGroupProps>(), markerClusterGroupPropsDefaults)

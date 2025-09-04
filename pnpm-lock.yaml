@@ -13,7 +13,7 @@ importers:
         version: 2.0.0-alpha
       leaflet.markercluster:
         specifier: ^1.5.3
-        version: 1.5.3
+        version: 1.5.3(leaflet@2.0.0-alpha)
     devDependencies:
       '@commitlint/cli':
         specifier: ^19.8.1
@@ -11025,7 +11025,9 @@ snapshots:
     dependencies:
       readable-stream: 2.3.8
 
-  leaflet.markercluster@1.5.3: {}
+  leaflet.markercluster@1.5.3(leaflet@2.0.0-alpha):
+    dependencies:
+      leaflet: 2.0.0-alpha
 
   leaflet@2.0.0-alpha: {}
 
