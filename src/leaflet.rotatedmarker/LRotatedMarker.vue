@@ -7,7 +7,7 @@ import {
     type RotatedMarkerProps,
     rotatedMarkerPropsDefaults,
     setupRotatedMarker
-} from '@/leaflet.rotatedmarker/rotatedMarker.ts'
+} from './rotatedMarker'
 
 /**
  * > Leaflet plugin to enable the rotation of map marker icons
