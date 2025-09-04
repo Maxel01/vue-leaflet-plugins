@@ -10,7 +10,7 @@ import {
     testRemoveLayerOnUnmount
 } from '@maxel01/vue-leaflet/tests'
 import { AddLayerInjection, RemoveLayerInjection } from '@maxel01/vue-leaflet'
-import type { RotatedMarker } from '@/leaflet.rotatedmarker/leaflet.rotatedMarker'
+import type { RotatedMarker } from '@/libs/leaflet.rotatedmarker/leaflet.rotatedMarker'
 import { LRotatedMarker } from '@/leaflet.rotatedmarker'
 import { LatLng } from 'leaflet'
 

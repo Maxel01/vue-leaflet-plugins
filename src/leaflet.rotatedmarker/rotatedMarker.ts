@@ -9,7 +9,7 @@ import {
 import type {
     RotatedMarker,
     RotatedMarkerOptions
-} from '@/leaflet.rotatedmarker/leaflet.rotatedMarker'
+} from '@/libs/leaflet.rotatedmarker/leaflet.rotatedMarker'
 import type { PointExpression } from 'leaflet'
 
 export interface RotatedMarkerProps extends MarkerProps {

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { markRaw, nextTick, onMounted, ref, useAttrs } from 'vue'
 import { AddLayerInjection, assertInject, propsBinder, remapEvents } from '@maxel01/vue-leaflet'
-import { RotatedMarker } from '@/leaflet.rotatedmarker/leaflet.rotatedMarker.ts'
+import { RotatedMarker } from '@/libs/leaflet.rotatedmarker/leaflet.rotatedMarker'
 import {
     type RotatedMarkerEmits,
     type RotatedMarkerProps,

@@ -13,7 +13,7 @@ import {
     testRemoveLayerOnUnmount
 } from '@maxel01/vue-leaflet/tests'
 import { AddLayerInjection, RemoveLayerInjection } from '@maxel01/vue-leaflet'
-import { Hotline } from '@/leaflet.hotline/leaflet.hotline'
+import { Hotline } from '@/libs/leaflet.hotline/leaflet.hotline'
 
 const hotlineProps = mergeReactiveProps(polylineProps, {
     latLngs: [

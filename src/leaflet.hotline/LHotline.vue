@@ -2,7 +2,7 @@
 import { markRaw, nextTick, onMounted, ref, useAttrs } from 'vue'
 import { AddLayerInjection, assertInject, propsBinder, remapEvents } from '@maxel01/vue-leaflet'
 import { type HotlineEmits, type HotlineProps, hotlinePropsDefaults, setupHotline } from './hotline'
-import { Hotline } from './leaflet.hotline'
+import { Hotline } from '@/libs/leaflet.hotline/leaflet.hotline'
 
 /**
  * > A polyline with colored gradients.
