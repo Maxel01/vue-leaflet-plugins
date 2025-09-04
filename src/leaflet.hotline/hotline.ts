@@ -1,7 +1,7 @@
 import { type PolylineOptions } from 'leaflet'
 
 import type { Ref } from 'vue'
-import { Hotline } from '@/libs/leaflet.hotline/leaflet.hotline'
+import { type ColorPalette, Hotline } from '@/libs/leaflet.hotline/leaflet.hotline'
 import {
     type PolylineEmits,
     type PolylineProps,
@@ -36,7 +36,7 @@ export interface HotlineProps<T extends PolylineOptions = PolylineOptions>
      * The color palette
      * @reactive
      */
-    palette?: Record<number, string>
+    palette?: ColorPalette
 }
 
 export const hotlinePropsDefaults = {
@@ -69,10 +69,10 @@ export const setupHotline = (
         setOutlineWidth(outlineWidth: number) {
             leafletRef.value?.setStyle({ outlineWidth })
         },
-        setOutlineColor(outlineColor: number) {
+        setOutlineColor(outlineColor: string) {
             leafletRef.value?.setStyle({ outlineColor })
         },
-        setPalette(palette: number) {
+        setPalette(palette: ColorPalette) {
             leafletRef.value?.setStyle({ palette })
         }
     }

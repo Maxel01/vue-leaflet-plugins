@@ -1,87 +1,42 @@
-/*!
- (c) 2017, iosphere GmbH
- Leaflet.hotline, a Leaflet plugin for drawing gradients along polylines.
- https://github.com/iosphere/Leaflet.hotline/
-*/
+import {
+    type Bounds,
+    Canvas,
+    LatLng,
+    type LatLngExpression,
+    LineUtil,
+    type Map,
+    Point,
+    Polyline,
+    type PolylineOptions,
+    type Renderer
+} from 'leaflet'
 
-import {Canvas, LatLng, LineUtil, Polyline} from 'leaflet';
+declare module 'leaflet' {
+    namespace LineUtil {
+        function _getBitCode(point: Point, bounds: Bounds): number;
 
-class HotlineElement {
-
-    /**
-     * Core renderer.
-     * @constructor
-     * @param {HTMLElement | string} canvas - &lt;canvas> element or its id
-     * to initialize the instance on.
-     */
-    constructor(canvas) {
-        this._canvas = canvas = typeof canvas === 'string'
-            ? document.getElementById(canvas)
-            : canvas;
-
-        this._ctx = canvas.getContext('2d');
-        this._width = canvas.width;
-        this._height = canvas.height;
-
-        this._weight = 5;
-        this._outlineWidth = 1;
-        this._outlineColor = 'black';
-
-        this._min = 0;
-        this._max = 1;
-
-        this._data = [];
-
-        this.palette({
-            0.0: 'green',
-            0.5: 'yellow',
-            1.0: 'red'
-        });
+        function _getEdgeIntersection(a: Point, b: Point, code: number, bounds: Bounds, round: boolean | undefined): Point;
     }
+}
 
-    /**
-     * Sets the width of the canvas. Used when clearing the canvas.
-     * @param {number} width - Width of the canvas.
-     */
-    width(width) {
-        this._width = width;
-        return this;
+export class Point3D extends Point {
+    z?: number | undefined;
+
+    constructor(x: number, y: number, z?: number, round?: boolean) {
+        super(x, y, round);
+        this.z = z;
     }
+}
 
-    /**
-     * Sets the height of the canvas. Used when clearing the canvas.
-     * @param {number} height - Height of the canvas.
-     */
-    height(height) {
-        this._height = height;
-        return this;
-    }
+export type ColorPalette = {
+    [value: number]: string
+}
 
-    /**
-     * Sets the weight of the path.
-     * @param {number} weight - Weight of the path in px.
-     */
-    weight(weight) {
-        this._weight = weight;
-        return this;
-    }
+class HotlinePalette {
+    private _palette: Uint8ClampedArray<ArrayBufferLike> | undefined
 
-    /**
-     * Sets the width of the outline around the path.
-     * @param {number} outlineWidth - Width of the outline in px.
-     */
-    outlineWidth(outlineWidth) {
-        this._outlineWidth = outlineWidth;
-        return this;
-    }
-
-    /**
-     * Sets the color of the outline around the path.
-     * @param {string} outlineColor - A CSS color value.
-     */
-    outlineColor(outlineColor) {
-        this._outlineColor = outlineColor;
-        return this;
+    constructor() {
+        this.palette({0.0: 'green', 0.5: 'yellow', 1.0: 'red'});
     }
 
     /**
@@ -89,228 +44,53 @@ class HotlineElement {
      * @param {Object.<number, string>} palette  - Gradient definition.
      * e.g. { 0.0: 'white', 1.0: 'black' }
      */
-    palette(palette) {
-        const canvas = document.createElement('canvas'),
-            ctx = canvas.getContext('2d'),
-            gradient = ctx.createLinearGradient(0, 0, 0, 256);
+    palette(palette: ColorPalette) {
+        const canvas = document.createElement('canvas');
+        const ctx = canvas.getContext('2d');
+        if (!ctx) throw new Error('Canvas not supported');
+        const gradient = ctx.createLinearGradient(0, 0, 0, 256);
 
         canvas.width = 1;
         canvas.height = 256;
 
-        for (let i in palette) {
-            gradient.addColorStop(i, palette[i]);
+        for (const i in palette) {
+            gradient.addColorStop(Number(i), palette[i]!);
         }
-
         ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, 1, 256);
 
         this._palette = ctx.getImageData(0, 0, 1, 256).data;
-
-        return this;
-    }
-
-    /**
-     * Sets the value used at the start of the palette gradient.
-     * @param {number} min
-     */
-    min(min) {
-        this._min = min;
-        return this;
-    }
-
-    /**
-     * Sets the value used at the end of the palette gradient.
-     * @param {number} max
-     */
-    max(max) {
-        this._max = max;
-        return this;
-    }
-
-    /**
-     * A path to rander as a hotline.
-     * @typedef Array.<{x:number, y:number, z:number}> Path - Array of x, y and z coordinates.
-     */
-
-    /**
-     * Sets the data that gets drawn on the canvas.
-     * @param {(Path|Path[])} data - A single path or an array of paths.
-     */
-    data(data) {
-        this._data = data;
-        return this;
-    }
-
-    /**
-     * Adds a path to the list of paths.
-     * @param {Path} path
-     */
-    add(path) {
-        this._data.push(path);
-        return this;
-    }
-
-    /**
-     * Draws the currently set paths.
-     */
-    draw() {
-        const ctx = this._ctx;
-
-        ctx.globalCompositeOperation = 'source-over';
-        ctx.lineCap = 'round';
-
-        this._drawOutline(ctx);
-        this._drawHotline(ctx);
-
-        return this;
     }
 
     /**
      * Gets the RGB values of a given z value of the current palette.
      * @param {number} value - Value to get the color for, should be between min and max.
+     * @param min
+     * @param max
      * @returns {Array.<number>} The RGB values as an array [r, g, b]
      */
-    getRGBForValue(value) {
-        const valueRelative = Math.min(Math.max((value - this._min) / (this._max - this._min), 0), 0.999);
+    getRGBForValue(value: number | undefined, min: number, max: number): number[] {
+        if(value === undefined) value = min
+        const valueRelative = Math.min(Math.max((value - min) / (max - min), 0), 0.999);
         const paletteIndex = Math.floor(valueRelative * 256) * 4;
-
+        if (!this._palette) return []
         return [
-            this._palette[paletteIndex],
-            this._palette[paletteIndex + 1],
-            this._palette[paletteIndex + 2]
+            this._palette[paletteIndex]!,
+            this._palette[paletteIndex + 1]!,
+            this._palette[paletteIndex + 2]!
         ];
     }
-
-    /**
-     * Draws the outline of the graphs.
-     * @private
-     */
-    _drawOutline(ctx) {
-        let i, j, dataLength, path, pathLength, pointStart, pointEnd;
-
-        if (this._outlineWidth) {
-            for (i = 0, dataLength = this._data.length; i < dataLength; i++) {
-                path = this._data[i];
-                ctx.lineWidth = this._weight + 2 * this._outlineWidth;
-
-                for (j = 1, pathLength = path.length; j < pathLength; j++) {
-                    pointStart = path[j - 1];
-                    pointEnd = path[j];
-
-                    ctx.strokeStyle = this._outlineColor;
-                    ctx.beginPath();
-                    ctx.moveTo(pointStart.x, pointStart.y);
-                    ctx.lineTo(pointEnd.x, pointEnd.y);
-                    ctx.stroke();
-                }
-            }
-        }
-    }
-
-    /**
-     * Draws the color encoded hotline of the graphs.
-     * @private
-     */
-    _drawHotline(ctx) {
-        let i, j, dataLength, path, pathLength, pointStart, pointEnd,
-            gradient, gradientStartRGB, gradientEndRGB;
-
-        ctx.lineWidth = this._weight;
-
-        for (i = 0, dataLength = this._data.length; i < dataLength; i++) {
-            path = this._data[i];
-
-            for (j = 1, pathLength = path.length; j < pathLength; j++) {
-                pointStart = path[j - 1];
-                pointEnd = path[j];
-
-                // Create a gradient for each segment, pick start end end colors from palette gradient
-                gradient = ctx.createLinearGradient(pointStart.x, pointStart.y, pointEnd.x, pointEnd.y);
-                gradientStartRGB = this.getRGBForValue(pointStart.z);
-                gradientEndRGB = this.getRGBForValue(pointEnd.z);
-                gradient.addColorStop(0, 'rgb(' + gradientStartRGB.join(',') + ')');
-                gradient.addColorStop(1, 'rgb(' + gradientEndRGB.join(',') + ')');
-
-                ctx.strokeStyle = gradient;
-                ctx.beginPath();
-                ctx.moveTo(pointStart.x, pointStart.y);
-                ctx.lineTo(pointEnd.x, pointEnd.y);
-                ctx.stroke();
-            }
-        }
-    }
 }
 
-class Renderer extends Canvas {
-
-    constructor(...args) {
-        super(...args);
-        this._hotline = null;
-    }
-
-    _initContainer() {
-        super._initContainer();
-        this._hotline = new HotlineElement(this._container);
-    }
-
-    _update() {
-        super._update();
-        this._hotline.width(this._container.width);
-        this._hotline.height(this._container.height);
-    }
-
-    _updatePoly(layer) {
-        if (!this._drawing) {
-            return;
-        }
-
-        const parts = layer._parts;
-        if (!parts.length) { return; }
-
-        this._updateOptions(layer);
-
-        this._hotline
-            .data(parts)
-            .draw();
-    }
-
-    _updateOptions(layer) {
-        if (layer.options.min != null) {
-            this._hotline.min(layer.options.min);
-        }
-        if (layer.options.max != null) {
-            this._hotline.max(layer.options.max);
-        }
-        if (layer.options.weight != null) {
-            this._hotline.weight(layer.options.weight);
-        }
-        if (layer.options.outlineWidth != null) {
-            this._hotline.outlineWidth(layer.options.outlineWidth);
-        }
-        if (layer.options.outlineColor != null) {
-            this._hotline.outlineColor(layer.options.outlineColor);
-        }
-        if (layer.options.palette) {
-            this._hotline.palette(layer.options.palette);
-        }
-    }
-}
-
-const renderer = function (options) {
-    //return Browser.canvas ? new Renderer(options) : null;
-    return new Renderer(options)
-}
-
-
-var Util = {
+const HotlineUtil = {
+    _lastCode: undefined as number | undefined,
     /**
      * This is just a copy of the original Leaflet version that support a third z coordinate.
      * @see {@link http://leafletjs.com/reference.html#lineutil-clipsegment|Leaflet}
      */
-    clipSegment: function (a, b, bounds, useLastCode, round) {
+    clipSegment: function (a: Point3D, b: Point3D, bounds: Bounds, useLastCode?: boolean | number, round?: boolean): Point[] | false {
         let codeA = useLastCode ? this._lastCode : LineUtil._getBitCode(a, bounds),
             codeB = LineUtil._getBitCode(b, bounds),
-
             codeOut, p, newCode;
 
         // save 2nd code to avoid calculating it on the next segment
@@ -318,18 +98,18 @@ var Util = {
 
         while (true) {
             // if a,b is inside the clip window (trivial accept)
-            if (!(codeA | codeB)) {
+            if (!(codeA! | codeB)) {
                 return [a, b];
             }
 
             // if a,b is outside the clip window (trivial reject)
-            if (codeA & codeB) {
+            if (codeA! & codeB) {
                 return false;
             }
 
             // other cases
             codeOut = codeA || codeB;
-            p = LineUtil._getEdgeIntersection(a, b, codeOut, bounds, round);
+            p = LineUtil._getEdgeIntersection(a, b, codeOut, bounds, round) as Point3D;
             newCode = LineUtil._getBitCode(p, bounds);
 
             if (codeOut === codeA) {
@@ -345,44 +125,157 @@ var Util = {
     }
 };
 
+class HotlineCanvasRenderer extends Canvas {
+    private _palette: HotlinePalette
+    declare _drawing: boolean;
+    declare _ctx: CanvasRenderingContext2D;
+    declare _bounds: Bounds;
+
+    constructor(options: HotlineOptions) {
+        super(options);
+        this._palette = new HotlinePalette();
+    }
+
+    _updatePoly(layer: Hotline) {
+        if (!this._drawing) {
+            return;
+        }
+
+        const parts = layer._parts;
+        if (!parts.length) {
+            return;
+        }
+
+        const options: HotlineOptions = layer.options;
+
+        this._palette.palette(options.palette!);
+        this._ctx.lineCap = 'round';
+
+        this.draw(parts, options)
+    }
+
+    /**
+     * Draws the paths.
+     */
+    draw(parts: Point[][], options: HotlineOptions) {
+        const ctx: CanvasRenderingContext2D = this._ctx;
+
+        ctx.globalCompositeOperation = 'source-over';
+        ctx.lineCap = 'round';
+
+        this._drawOutline(parts, options);
+        this._drawHotline(parts, options);
+    }
+
+    /**
+     * Draws the outline of the graphs.
+     * @private
+     */
+    _drawOutline(parts: Point[][], options: HotlineOptions) {
+        const ctx: CanvasRenderingContext2D = this._ctx;
+        if (options.outlineWidth) {
+            ctx.lineWidth = options.weight! + 2 * options.outlineWidth;
+            ctx.strokeStyle = options.outlineColor!;
+            for (const path of parts) {
+                for (let j = 1; j < path.length; j++) {
+                    const pointStart = path[j - 1]!;
+                    const pointEnd = path[j]!;
+                    ctx.beginPath();
+                    ctx.moveTo(pointStart.x, pointStart.y);
+                    ctx.lineTo(pointEnd.x, pointEnd.y);
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+
+    /**
+     * Draws the color encoded hotline of the graphs.
+     * @private
+     */
+    _drawHotline(parts: Point3D[][], options: HotlineOptions) {
+        const ctx: CanvasRenderingContext2D = this._ctx;
+        ctx.lineWidth = options.weight!;
+        for (const path of parts) {
+            for (let j = 1; j < path.length; j++) {
+                const pointStart = path[j - 1]!;
+                const pointEnd = path[j]!;
+
+                // Create a gradient for each segment, pick start and end colors from palette gradient
+                const gradient = ctx.createLinearGradient(pointStart.x, pointStart.y, pointEnd.x, pointEnd.y);
+                const gradientStartRGB = this._palette.getRGBForValue(pointStart.z, options.min!, options.max!);
+                const gradientEndRGB = this._palette.getRGBForValue(pointEnd.z, options.min!, options.max!);
+                gradient.addColorStop(0, 'rgb(' + gradientStartRGB.join(',') + ')');
+                gradient.addColorStop(1, 'rgb(' + gradientEndRGB.join(',') + ')');
+
+                ctx.strokeStyle = gradient;
+                ctx.beginPath();
+                ctx.moveTo(pointStart.x, pointStart.y);
+                ctx.lineTo(pointEnd.x, pointEnd.y);
+                ctx.stroke();
+            }
+        }
+    }
+}
+
+export interface HotlineOptions extends PolylineOptions {
+    renderer?: Renderer,
+    weight?: number,
+    outlineWidth?: number,
+    outlineColor?: string,
+    min?: number,
+    max?: number,
+    palette?: ColorPalette,
+}
+
 export class Hotline extends Polyline {
+    declare options: HotlineOptions
+    declare _parts: Point[][]
+    declare _rings: Point[][]
+    declare _renderer: HotlineCanvasRenderer;
 
-    constructor(latlngs, options = {}) {
-        super(latlngs, {
-            renderer: renderer(),
-            min: 0,
-            max: 1,
-            palette: {
-                0.0: 'green',
-                0.5: 'yellow',
-                1.0: 'red'
-            },
-            weight: 5,
-            outlineColor: 'black',
-            outlineWidth: 1,
-            ...options
-        });
+    static defaultOptions = {
+        weight: 5,
+        outlineWidth: 1,
+        outlineColor: 'black',
+        min: 0,
+        max: 1,
+        palette: {
+            0.0: 'green',
+            0.5: 'yellow',
+            1.0: 'red'
+        }
     }
 
-    getRGBForValue(value) {
-        return this._renderer._hotline.getRGBForValue(value);
+    constructor(latlngs: LatLngExpression[] | LatLngExpression[][], options?: HotlineOptions) {
+        super(latlngs, {...(Hotline.defaultOptions), ...options});
     }
+
+    beforeAdd(map: Map): this {
+        this.options.renderer = new HotlineCanvasRenderer(this.options);
+        return super.beforeAdd!(map)
+    }
+
+    setStyle(style: HotlineOptions): this {
+        return super.setStyle(style);
+    }
+
 
     /**
      * Just like the Leaflet version, but with support for a z coordinate.
      */
-    _projectLatlngs(latlngs, result, projectedBounds) {
+    _projectLatlngs(latlngs: LatLng[] | LatLng[][], result: Point[][], projectedBounds: Bounds) {
         const flat = latlngs[0] instanceof LatLng;
 
         if (flat) {
-            const ring = latlngs.map(latlng => {
-                const point = this._map.latLngToLayerPoint(latlng)
+            const ring = (latlngs as LatLng[]).map(latlng => {
+                const point = this._map.latLngToLayerPoint(latlng) as Point3D
                 point.z = latlng.alt;
                 return point
             })
             result.push(ring);
         } else {
-            latlngs.forEach(latlng => this._projectLatlngs(latlng, result, projectedBounds));
+            (latlngs as LatLng[][]).forEach(latlng => this._projectLatlngs(latlng, result, projectedBounds));
         }
     }
 
@@ -402,21 +295,21 @@ export class Hotline extends Polyline {
         let i, j, k, len, len2, segment, points;
 
         for (i = 0, k = 0, len = this._rings.length; i < len; i++) {
-            points = this._rings[i];
+            points = this._rings[i] as Point[];
 
             for (j = 0, len2 = points.length; j < len2 - 1; j++) {
-                segment = Util.clipSegment(points[j], points[j + 1], bounds, j, true);
+                segment = HotlineUtil.clipSegment(points[j]!, points[j + 1]!, bounds, j, true);
 
                 if (!segment) {
                     continue;
                 }
 
                 parts[k] = parts[k] || [];
-                parts[k].push(segment[0]);
+                parts[k]!.push(segment[0]!);
 
                 // if segment goes out of screen, or it's the last one, it's the end of the line part
                 if ((segment[1] !== points[j + 1]) || (j === len2 - 2)) {
-                    parts[k].push(segment[1]);
+                    parts[k]!.push(segment[1]!);
                     k++;
                 }
             }
@@ -424,8 +317,6 @@ export class Hotline extends Polyline {
     }
 
     _clickTolerance() {
-        //return this.options.weight / 2 + this.options.outlineWidth + (Browser.touch ? 10 : 0);
-        return this.options.weight / 2 + this.options.outlineWidth + 10;
+        return this.options.weight! / 2 + this.options.outlineWidth! + 10;
     }
 }
-
