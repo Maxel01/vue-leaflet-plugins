@@ -1,17 +1,24 @@
 <script setup lang="ts">
 import { markRaw, nextTick, onMounted, ref, useAttrs } from 'vue'
 import { AddLayerInjection, assertInject, propsBinder, remapEvents } from '@maxel01/vue-leaflet'
-import { setupTemplate, type Template, type TemplateProps, templatePropsDefaults } from '@/plugin-template/template.ts'
+import {
+    type DonutEmits,
+    type DonutProps,
+    donutPropsDefaults,
+    setupDonut
+} from '@/leaflet.donut/donut'
+
+import { Donut } from '@/libs/leaflet.donut/leaflet.donut'
 
 /**
- * > A Leaflet plugin for ...
- * @demo template {13-22}
+ * > A Leaflet plugin for drawing donuts.
+ * @demo donut {3,13}
  */
 defineOptions({})
-const props = withDefaults(defineProps<TemplateProps>(), templatePropsDefaults)
-const emit = defineEmits<TemplateProps>()
+const props = withDefaults(defineProps<DonutProps>(), donutPropsDefaults)
+const emit = defineEmits<DonutEmits>()
 
-const { ready, leafletObject } = useTemplate()
+const { ready, leafletObject } = useDonut()
 defineExpose({
     /**
      * Indicates whether the component and its underlying Leaflet object are fully initialized.
@@ -20,21 +27,21 @@ defineExpose({
     ready,
     /**
      * The underlying Leaflet instance. Can be used to directly interact with the Leaflet API (e.g. calling methods or accessing internal state).
-     * @type {Ref<Hotline \| undefined>}
+     * @type {Ref<Donut \| undefined>}
      */
     leafletObject
 })
 
-function useTemplate() {
-    const leafletObject = ref<Template>()
+function useDonut() {
+    const leafletObject = ref<Donut>()
     const ready = ref(false)
 
     const addLayer = assertInject(AddLayerInjection)
 
-    const { options, methods } = setupTemplate(props, leafletObject, emit)
+    const { options, methods } = setupDonut(props, leafletObject, emit)
 
     onMounted(async () => {
-        leafletObject.value = markRaw<Template>(new Template(..., options))
+        leafletObject.value = markRaw<Donut>(new Donut(props.latLng, options))
 
         const { listeners } = remapEvents(useAttrs())
         leafletObject.value.on(listeners)
@@ -56,7 +63,7 @@ function useTemplate() {
 <template>
     <div v-if="ready" style="display: none">
         <!--
-        @slot Used to inject Leaflet child components like `<LPopup>` or `<LTooltip>` into the `LTemplate`.
+        @slot Used to inject Leaflet child components like `<LPopup>` or `<LTooltip>` into the `LDonut`.
         -->
         <slot />
     </div>

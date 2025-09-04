@@ -18,7 +18,7 @@ export default defineConfig({
             { text: 'Home', link: '/' },
             { text: 'Quick Start', link: '/getting-started/installation' },
             { text: 'Guide', link: '/guide' },
-            { text: 'Plugins', link: '/plugins/' },
+            { text: 'Plugins', link: '/plugins/introduction' },
             { text: 'Contribution', link: '/getting-started/contribution' }
         ],
 
@@ -42,6 +42,10 @@ export default defineConfig({
                     {
                         text: 'Introduction',
                         link: '/plugins/introduction'
+                    },
+                    {
+                        text: 'Leaflet.Donut',
+                        link: '/plugins/leaflet.donut/'
                     },
                     {
                         text: 'Leaflet.Hotline',
