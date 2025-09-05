@@ -14,4 +14,5 @@ The module provides the following plugins:
 
 - [`Leaflet.Donut`](/plugins/leaflet.donut/)
 - [`Leaflet.Hotline`](/plugins/leaflet.hotline/)
+- [`Leaflet.MarkerCluster`](/plugins/leaflet.markercluster/)
 - [`Leaflet.RotatedMarker`](/plugins/leaflet.rotatedmarker/)
