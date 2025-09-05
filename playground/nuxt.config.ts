@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     ssr: true,
     compatibilityDate: '2025-07-15',
     devtools: { enabled: true },
-    css: ['leaflet/dist/leaflet.css'],
+    css: ['leaflet/dist/leaflet.css', "@maxel01/vue-leaflet-plugins/dist/vue-leaflet-plugins.css"],
     app: {
         head: {
             link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
