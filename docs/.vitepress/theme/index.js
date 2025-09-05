@@ -1,5 +1,7 @@
 import DefaultTheme from 'vitepress/theme'
 import './custom.css'
+import 'leaflet/dist/leaflet.css'
+import '../../../dist/vue-leaflet-plugins.css'
 
 /** @type {import('vitepress').Theme} */
 export default {

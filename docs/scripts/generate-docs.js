@@ -75,9 +75,6 @@ function writeDemo(doc, markdown, pluginName) {
         const [demoName, highlight] = demo.description.split(' ')
         markdown +=
             '## 🧪 Demo\n\n' +
-            '<script>\n' +
-            'import "leaflet/dist/leaflet.css";\n' +
-            '</script>\n\n' +
             '<div class="demo">\n' +
             `    <demo-${pluginName}-${demoName} />\n` +
             '</div>\n\n' +

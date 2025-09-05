@@ -12,10 +12,6 @@ A Leaflet plugin for drawing colored gradients along polylines. This is useful f
 
 ## 🧪 Playground
 
-<script>
-import "leaflet/dist/leaflet.css";
-</script>
-
 <div class="demo">
     <demo-leaflet.hotline-index />
 </div>

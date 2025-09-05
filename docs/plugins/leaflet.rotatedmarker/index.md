@@ -12,10 +12,6 @@ Enables rotation of marker icons in Leaflet.
 
 ## 🧪 Playground
 
-<script>
-import "leaflet/dist/leaflet.css";
-</script>
-
 <div class="demo">
     <demo-leaflet.rotatedmarker-index />
 </div>

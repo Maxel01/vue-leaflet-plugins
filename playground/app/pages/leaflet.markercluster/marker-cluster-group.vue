@@ -4,8 +4,6 @@ import { LMarkerClusterGroup } from '@maxel01/vue-leaflet-plugins'
 import { LatLng, Map } from 'leaflet'
 import { ref } from 'vue'
 
-// TODO does not work in vitepress
-
 const markers = ref<LatLng[]>([])
 
 function getRandomLatLng(map: Map) {

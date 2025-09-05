@@ -9,7 +9,10 @@ export default defineConfig({
     base: '/vue-leaflet-plugins/',
     vite: {
         resolve: {
-            alias
+            alias: {
+                ...alias,
+                '@maxel01/vue-leaflet-plugins': '@dist/vue-leaflet-plugins',
+            }
         }
     },
     themeConfig: {

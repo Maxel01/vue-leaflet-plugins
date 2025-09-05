@@ -44,6 +44,10 @@ jobs:
         uses: actions/configure-pages@v4
       - name: Install dependencies
         run: pnpm install
+      - name: Build vue-leaflet-plugins
+        run: pnpm run build
+      - name: Install dependencies
+        run: pnpm install
       - name: Build with VitePress
         run: pnpm run docs:build
       - name: Upload artifact
