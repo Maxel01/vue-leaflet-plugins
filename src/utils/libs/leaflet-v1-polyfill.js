@@ -277,7 +277,7 @@ function applyUtilPolyfill() {
 		}
 		return dest;
 	};
-	
+
 	L.extend = L.Util.extend;
 	L.bind = L.Util.bind;
 	L.stamp = L.Util.stamp;
@@ -299,7 +299,7 @@ function applyMouseEventPolyfill() {
 		mouseEventToLatLng(e) {
 			return this.pointerEventToLatLng(e);
 		},
-	
+
 		// Fallback bubblingMouseEvents
 		_findEventTargets(e, type) {
 			const targets = _super_findEventTargets.call(this, e, type);
@@ -310,7 +310,7 @@ function applyMouseEventPolyfill() {
 			}
 			return targets;
 		},
-	
+
 		// Add support for mouse events
 		_initEvents(remove) {
 			_super_initEvents.call(this, remove);
@@ -318,7 +318,7 @@ function applyMouseEventPolyfill() {
 			onOff(this._container, 'mousedown mouseup mouseover mouseout mousemove', this._handleDOMEvent, this);
 		}
 	});
-	
+
 	const _super_disableClickPropagation = L.DomEvent.disableClickPropagation;
 	L.DomEvent.disableClickPropagation = function disableClickPropagation(el) {
 		L.DomEvent.on(el, 'mousedown touchstart', L.DomEvent.stopPropagation);
@@ -532,13 +532,15 @@ function applyMiscPolyfill() {
 	document.head.appendChild(ccsStyle);
 }
 
-globalThis.applyAllPolyfills = applyAllPolyfills;
-globalThis.applyMinimumPolyfills = applyMinimumPolyfills;
-globalThis.applyBrowserPolyfill = applyBrowserPolyfill;
-globalThis.applyDomUtilPolyfill = applyDomUtilPolyfill;
-globalThis.applyUtilPolyfill = applyUtilPolyfill;
-globalThis.applyMouseEventPolyfill = applyMouseEventPolyfill;
-globalThis.applyDomEventPolyfill = applyDomEventPolyfill;
-globalThis.applyDeprecatedMethodsPolyfill = applyDeprecatedMethodsPolyfill;
-globalThis.applyFactoryMethodsPolyfill = applyFactoryMethodsPolyfill;
-globalThis.applyMiscPolyfill = applyMiscPolyfill;
+export {
+    applyAllPolyfills,
+    applyMinimumPolyfills,
+    applyBrowserPolyfill,
+    applyDomUtilPolyfill,
+    applyUtilPolyfill,
+    applyMouseEventPolyfill,
+    applyDomEventPolyfill,
+    applyDeprecatedMethodsPolyfill,
+    applyFactoryMethodsPolyfill,
+    applyMiscPolyfill
+}
