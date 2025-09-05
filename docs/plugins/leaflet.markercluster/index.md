@@ -12,10 +12,6 @@ Provides Beautiful Animated Marker Clustering functionality for Leaflet, a JS li
 
 ## 🧪 Playground
 
-<script>
-import "leaflet/dist/leaflet.css";
-</script>
-
 <div class="demo">
     <demo-leaflet.markercluster-index />
 </div>
