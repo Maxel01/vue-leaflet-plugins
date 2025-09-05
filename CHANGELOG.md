@@ -1,5 +1,39 @@
 # Changelog
 
+## [0.0.1-alpha.2](https://github.com/maxel01/vue-leaflet-plugins/compare/v0.0.1-alpha.1...v0.0.1-alpha.2) (2025-09-05)
+
+
+### ✨ Features
+
+* add ``leaflet.donut`` ([#14](https://github.com/maxel01/vue-leaflet-plugins/issues/14)) ([58db9ab](https://github.com/maxel01/vue-leaflet-plugins/commit/58db9ab3094edb88ad2a510936667153a9e3e10e))
+* add ``Leaflet.MarkerCluster`` ([#16](https://github.com/maxel01/vue-leaflet-plugins/issues/16)) ([7e60471](https://github.com/maxel01/vue-leaflet-plugins/commit/7e604716a06105ea5b7862dbc6dc109b71aa126d))
+
+
+### 🐛 Bug Fixes
+
+* add slots to ``LHotline`` and ``LRotatedMarker`` ([#13](https://github.com/maxel01/vue-leaflet-plugins/issues/13)) ([163a5e7](https://github.com/maxel01/vue-leaflet-plugins/commit/163a5e70ad6572775e07bbe782a8d8fe9ee342ec))
+* **leaflet.hotline:** rename docstring ``LDonut`` to ``LHotline`` ([#15](https://github.com/maxel01/vue-leaflet-plugins/issues/15)) ([3f84994](https://github.com/maxel01/vue-leaflet-plugins/commit/3f84994502c720f23c2d9a349326d70c687c57ea))
+* **playground-vue:** add missing imports ([#9](https://github.com/maxel01/vue-leaflet-plugins/issues/9)) ([edfe165](https://github.com/maxel01/vue-leaflet-plugins/commit/edfe165d857f747878b9ad7f03f4d3824610a135))
+
+
+### 📝 Documentation
+
+* fix failed vitepress build due to npm package of this lib ([#18](https://github.com/maxel01/vue-leaflet-plugins/issues/18)) ([c0d0bc1](https://github.com/maxel01/vue-leaflet-plugins/commit/c0d0bc1371b7162c776792f79331f2fd46cc1dbe))
+* improve vitepress docs & add contribution guide ([#8](https://github.com/maxel01/vue-leaflet-plugins/issues/8)) ([820af65](https://github.com/maxel01/vue-leaflet-plugins/commit/820af65b45d9efee46c2bc63509cbc538bddbd41))
+* update README.md ([#17](https://github.com/maxel01/vue-leaflet-plugins/issues/17)) ([6c41ff1](https://github.com/maxel01/vue-leaflet-plugins/commit/6c41ff1a046c0fa9f02e2d11508aea03e2172a04))
+
+
+### ♻️ Refactoring
+
+* add ts compatibility in Leaflet.RotatedMarker ([#12](https://github.com/maxel01/vue-leaflet-plugins/issues/12)) ([37b4455](https://github.com/maxel01/vue-leaflet-plugins/commit/37b445503490df051ca82c009f7f84114ff38634))
+* **leaflet.hotline:** replace implementation with fully ts support ([#11](https://github.com/maxel01/vue-leaflet-plugins/issues/11)) ([77e4e87](https://github.com/maxel01/vue-leaflet-plugins/commit/77e4e87f3f0bac49db8ad315bb885f532f500d7d))
+
+
+### 🚧 Chores
+
+* **deps:** update playground to current version of this repo. ([d7c81fc](https://github.com/maxel01/vue-leaflet-plugins/commit/d7c81fc4e6e34a7646743e876ec8841e61126edd))
+* move plugin implementations to the libs folder ([#10](https://github.com/maxel01/vue-leaflet-plugins/issues/10)) ([fc34dbb](https://github.com/maxel01/vue-leaflet-plugins/commit/fc34dbb49bdc692cee377a8cf3efd78131050d76))
+
 ## [0.0.1-alpha.1](https://github.com/maxel01/vue-leaflet-plugins/compare/v0.0.1-alpha...v0.0.1-alpha.1) (2025-09-02)
 
 
