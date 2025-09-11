@@ -19,32 +19,32 @@ export interface HeatLayerProps extends LayerProps {
      * the minimum opacity the heat will start at
      * @reactive
      */
-    minOpacity: number
+    minOpacity?: number
     /**
      * zoom level where the points reach maximum intensity (as intensity scales with zoom), equals `maxZoom` of the map by default
      * @reactive
      */
-    maxZoom: number
+    maxZoom?: number
     /**
      * radius of each "point" of the heatmap, `25` by default
      * @reactive
      */
-    radius: number
+    radius?: number
     /**
      * amount of blur, `15` by default
      * @reactive
      */
-    blur: number
+    blur?: number
     /**
      * maximum point intensity, `1.0` by default
      * @reactive
      */
-    max: number
+    max?: number
     /**
      *  color gradient config, e.g. `{0.4: 'blue', 0.65: 'lime', 1: 'red'}`
      * @reactive
      */
-    gradient
+    gradient?
 }
 
 export const heatLayerPropsDefaults = {
@@ -52,6 +52,9 @@ export const heatLayerPropsDefaults = {
 }
 
 export interface HeatLayerEmits extends LayerEmits {
+    /**
+     * Triggers when the component is ready
+     */
     (event: 'ready', heatLayer: HeatLayer): void
 }
 

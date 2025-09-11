@@ -2,17 +2,17 @@
 import { markRaw, nextTick, onMounted, ref, useAttrs } from 'vue'
 import { AddLayerInjection, assertInject, propsBinder, remapEvents } from '@maxel01/vue-leaflet'
 
-import { HeatLayer } from '@/libs/leaflet.heat/leaflet.heat.ts'
+import { HeatLayer } from '@/libs/leaflet.heat/leaflet.heat'
 import {
     type HeatLayerEmits,
     type HeatLayerProps,
     heatLayerPropsDefaults,
     setupHeatLayer
-} from '@/leaflet.heat/heatLayer.ts'
+} from '@/leaflet.heat/heatLayer'
 
 /**
  * > A Leaflet plugin for heatmaps
- * @demo heat {13-22}
+ * @demo heat-layer {7,17}
  */
 defineOptions({})
 const props = withDefaults(defineProps<HeatLayerProps>(), heatLayerPropsDefaults)
@@ -27,7 +27,7 @@ defineExpose({
     ready,
     /**
      * The underlying Leaflet instance. Can be used to directly interact with the Leaflet API (e.g. calling methods or accessing internal state).
-     * @type {Ref<Hotline \| undefined>}
+     * @type {Ref<HeatLayer \| undefined>}
      */
     leafletObject
 })
@@ -41,7 +41,7 @@ function useHeatLayer() {
     const { options, methods } = setupHeatLayer(props, leafletObject, emit)
 
     onMounted(async () => {
-        leafletObject.value = markRaw<HeatLayer>(new HeatLayer(props.latlngs, options))
+        leafletObject.value = markRaw<HeatLayer>(new HeatLayer(props.latLngs, options))
 
         const { listeners } = remapEvents(useAttrs())
         leafletObject.value.on(listeners)

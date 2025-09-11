@@ -39,7 +39,7 @@ export class HeatLayer extends Layer {
     private _heat
     private _frame
     private _canvas
-    public options: HeatLayerOptions
+    declare options: HeatLayerOptions
     // options: {
     //     minOpacity: 0.05,
     //     maxZoom: 18,
@@ -51,7 +51,7 @@ export class HeatLayer extends Layer {
     constructor(latlngs: LatLng[], options: HeatLayerOptions) {
         super(options)
         this._latlngs = latlngs
-        this.options = Util.setOptions(this, options)
+        this.options = options
     }
 
     setLatLngs(latlngs: LatLng[]): this {
