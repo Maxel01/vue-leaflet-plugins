@@ -51,6 +51,10 @@ export default defineConfig({
                         link: '/plugins/leaflet.donut/'
                     },
                     {
+                        text: 'Leaflet.Heat',
+                        link: '/plugins/leaflet.heat/'
+                    },
+                    {
                         text: 'Leaflet.Hotline',
                         link: '/plugins/leaflet.hotline/'
                     },

@@ -7,6 +7,8 @@
             <NuxtLink to="/">Home</NuxtLink>
             <NuxtLink to="/leaflet.donut">Leaflet.Donut</NuxtLink>
             <NuxtLink to="/leaflet.donut/donut">LDonut</NuxtLink>
+            <NuxtLink to="/leaflet.heat">Leaflet.Heat</NuxtLink>
+            <NuxtLink to="/leaflet.heat/heat-layer">LHeatLayer</NuxtLink>
             <NuxtLink to="/leaflet.hotline">Leaflet.Hotline</NuxtLink>
             <NuxtLink to="/leaflet.hotline/hotline">LHotline</NuxtLink>
             <NuxtLink to="/leaflet.markercluster">Leaflet.MarkerCluster</NuxtLink>
