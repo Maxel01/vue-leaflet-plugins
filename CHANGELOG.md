@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.0.2](https://github.com/maxel01/vue-leaflet-plugins/compare/v0.0.1...v0.0.2) (2025-09-24)
+
+
+### 🚧 Chores
+
+* add additional files to npm package ([#23](https://github.com/maxel01/vue-leaflet-plugins/issues/23)) ([1c3d5ae](https://github.com/maxel01/vue-leaflet-plugins/commit/1c3d5ae1b629c050281edfcd6d878a9b2610df70))
+* update licences ([#22](https://github.com/maxel01/vue-leaflet-plugins/issues/22)) ([2cf2cca](https://github.com/maxel01/vue-leaflet-plugins/commit/2cf2cca74474db8ef2d61749ff42b8231e042357))
+
 ## [0.0.1](https://github.com/maxel01/vue-leaflet-plugins/compare/v0.0.1-alpha.2...v0.0.1) (2025-09-24)
 
 
