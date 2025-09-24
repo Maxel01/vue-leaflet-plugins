@@ -2,7 +2,7 @@
 import { ref, reactive, computed } from 'vue'
 import { LMap, LTileLayer } from '@maxel01/vue-leaflet'
 import { LHeatLayer } from '@maxel01/vue-leaflet-plugins'
-import { coords } from '../../utils/leaflet.hotline/coords'
+import { coords, altitudes } from '../../utils/leaflet.hotline/coords'
 
 const minOpacity = ref(0.05)
 const maxZoom = ref(16)
@@ -20,6 +20,13 @@ const gradient = computed(() => ({
     0.5: colors.color2,
     1.0: colors.color3
 }))
+const normalizedCoords = computed(() =>
+    coords.map((value) => [
+        value[0],
+        value[1],
+        value[2]! / Math.max(...altitudes)
+    ])
+)
 </script>
 
 <template>
@@ -30,7 +37,7 @@ const gradient = computed(() => ({
             name="OpenStreetMap"
         />
         <LHeatLayer
-            :lat-lngs="coords"
+            :lat-lngs="normalizedCoords"
             :minOpacity="minOpacity"
             :maxZoom="maxZoom"
             :radius="radius"
@@ -61,7 +68,7 @@ const gradient = computed(() => ({
         <br />
         <label>
             <span>Max - </span>
-            0 <input v-model.number="max" type="range" min="0" max="1" step=".05" /> 1
+            0 <input v-model.number="max" type="range" min="0.05" max="4" step=".05" /> 4
         </label>
         <br />
         <label>

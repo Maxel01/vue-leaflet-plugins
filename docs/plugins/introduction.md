@@ -13,6 +13,7 @@ Props and events can be verified by looking at the [plugin components](https://g
 The module provides the following plugins:
 
 - [`Leaflet.Donut`](/plugins/leaflet.donut/)
+- [`Leaflet.Heat`](/plugins/leaflet.heat/)
 - [`Leaflet.Hotline`](/plugins/leaflet.hotline/)
 - [`Leaflet.MarkerCluster`](/plugins/leaflet.markercluster/)
 - [`Leaflet.RotatedMarker`](/plugins/leaflet.rotatedmarker/)
