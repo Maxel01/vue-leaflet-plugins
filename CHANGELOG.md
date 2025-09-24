@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.0.1](https://github.com/maxel01/vue-leaflet-plugins/compare/v0.0.1-alpha.2...v0.0.1) (2025-09-24)
+
+
+### ✨ Features
+
+* add `Leaflet.heat` ([#20](https://github.com/maxel01/vue-leaflet-plugins/issues/20)) ([48df583](https://github.com/maxel01/vue-leaflet-plugins/commit/48df583e6036c78fd38be7b3f8b85ce6548df66d))
+
+
+### 📝 Documentation
+
+* improve Leaflet.heat page ([#21](https://github.com/maxel01/vue-leaflet-plugins/issues/21)) ([c762772](https://github.com/maxel01/vue-leaflet-plugins/commit/c762772109bd3ea2006d65f0321fb59056bc3dad))
+
 ## [0.0.1-alpha.2](https://github.com/maxel01/vue-leaflet-plugins/compare/v0.0.1-alpha.1...v0.0.1-alpha.2) (2025-09-05)
 
 
