@@ -21,8 +21,18 @@ SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRU
 HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
 TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- */
-import { Bounds, DomUtil, type LatLng, LatLngBounds, Layer, type LayerOptions, type Map, Point, Util } from 'leaflet'
+*/
+import {
+    Bounds,
+    DomUtil,
+    type LatLng,
+    LatLngBounds,
+    Layer,
+    type LayerOptions,
+    type Map,
+    Point,
+    Util
+} from 'leaflet'
 import simpleheat from 'simpleheat'
 
 export interface HeatLayerOptions extends LayerOptions {
