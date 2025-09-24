@@ -31,12 +31,12 @@ export interface HeatLayerOptions extends LayerOptions {
     radius: number
     blur: number
     max: number
-    gradient
+    gradient: { [key: number]: string }
 }
 
 export class HeatLayer extends Layer {
     private _latlngs: LatLng[]
-    private _heat
+    private _heat: simpleheat.Instance
     private _frame
     private _canvas
     declare options: HeatLayerOptions

@@ -28,6 +28,7 @@ Built with the Composition API, SSR-compatible, and designed to integrate seamle
 The following plugins are currently wrapped and ready for use:
 
 ☑️ [Leaflet.Donut](https://github.com/Falke-Design/L.Donut) (draw donuts) \
+☑️ [Leaflet.heat](https://github.com/Leaflet/Leaflet.heat) (heatmap layer) \
 ☑️ [Leaflet.hotline](https://github.com/iosphere/Leaflet.hotline) (heatmap-style polylines) \
 ☑️ [Leaflet.MarkerCluster](https://github.com/Leaflet/Leaflet.markercluster) (animated marker clustering) \
 ☑️ [Leaflet.RotatedMarker](https://github.com/bbecquet/Leaflet.RotatedMarker) (rotate markers)
