@@ -2,7 +2,7 @@
 import path from 'node:path'
 import { alias } from '../alias.config'
 
-const version: 'local' | 'dist' | 'npm' = 'local'
+const version: 'local' | 'dist' | 'npm' = 'dist'
 const vue_leaflet_plugins = {
     local: path.resolve(__dirname, '../src/plugins'),
     dist: '@dist/vue-leaflet-plugins',
