@@ -139,8 +139,8 @@ importers:
   playground-vue:
     dependencies:
       '@maxel01/vue-leaflet':
-        specifier: 1.0.0-beta
-        version: 1.0.0-beta(leaflet@2.0.0-alpha)(vue@3.5.20(typescript@5.8.3))
+        specifier: 1.0.0-beta.1
+        version: 1.0.0-beta.1(leaflet@2.0.0-alpha)(vue@3.5.20(typescript@5.8.3))
       '@vueuse/core':
         specifier: ^13.6.0
         version: 13.8.0(vue@3.5.20(typescript@5.8.3))
@@ -1303,12 +1303,6 @@ packages:
     resolution: {integrity: sha512-nt73st2UZ07dmLHg6f/sQkDPhAbn2R4hrSbz/FSrSXZX177lJ9OS9GCdqduXrTo5iFTiiQrU8EEqmk9KfcP7Pg==}
     peerDependencies:
       '@maxel01/vue-leaflet': ^1.0.0-beta.1
-      leaflet: ^2.0.0-alpha
-      vue: ^3.5.0
-
-  '@maxel01/vue-leaflet@1.0.0-beta':
-    resolution: {integrity: sha512-qKUzp5cZ6zM1xAPcCIFnDUaRSh0OzH7cyXb7xj30OvTknA5aT0JphAJUo0IoRjI86kK+fgvTxCtuxA8303yhEg==}
-    peerDependencies:
       leaflet: ^2.0.0-alpha
       vue: ^3.5.0
 
@@ -7894,12 +7888,6 @@ snapshots:
     dependencies:
       '@maxel01/vue-leaflet': 1.0.0-beta.1(leaflet@2.0.0-alpha)(vue@3.5.20(typescript@5.8.3))
       leaflet: 2.0.0-alpha
-      vue: 3.5.20(typescript@5.8.3)
-
-  '@maxel01/vue-leaflet@1.0.0-beta(leaflet@2.0.0-alpha)(vue@3.5.20(typescript@5.8.3))':
-    dependencies:
-      leaflet: 2.0.0-alpha
-      ts-debounce: 4.0.0
       vue: 3.5.20(typescript@5.8.3)
 
   '@maxel01/vue-leaflet@1.0.0-beta.1(leaflet@2.0.0-alpha)(vue@3.5.20(typescript@5.8.3))':
