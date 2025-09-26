@@ -29,6 +29,7 @@ export const rotatedMarkerPropsDefaults = {
     ...markerPropsDefaults
 }
 
+/* eslint-disable-next-line @typescript-eslint/no-empty-object-type */
 export interface RotatedMarkerEmits extends MarkerEmits {}
 
 export const setupRotatedMarker = (
