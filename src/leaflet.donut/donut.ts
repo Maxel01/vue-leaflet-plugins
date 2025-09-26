@@ -30,6 +30,7 @@ export const donutPropsDefaults = {
     innerRadiusAsPercent: false
 }
 
+/* eslint-disable-next-line @typescript-eslint/no-empty-object-type */
 export interface DonutEmits extends CircleEmits {}
 
 export const setupDonut = (

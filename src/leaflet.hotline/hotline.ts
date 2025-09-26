@@ -43,6 +43,7 @@ export const hotlinePropsDefaults = {
     ...polylinePropsDefaults
 }
 
+/* eslint-disable-next-line @typescript-eslint/no-empty-object-type */
 export interface HotlineEmits<T extends Hotline = Hotline> extends PolylineEmits<T> {}
 
 export const setupHotline = (
