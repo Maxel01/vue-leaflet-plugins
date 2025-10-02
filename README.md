@@ -35,7 +35,8 @@ The following plugins are currently wrapped and ready for use:
 
 More plugins will be added over time. If you need a specific plugin, open a request in the repo.
 
-> ⚠️ Note: Leaflet v1 plugins **are not compatible** with Leaflet v2. They must be ported and wrapped first.
+> ⚠️ Note: Leaflet v1 plugins **are not directly compatible** with Leaflet v2. \
+> However, there is a possibility to use the [Leaflet-V1-polyfill](https://github.com/Falke-Design/Leaflet-V1-polyfill). Check out the `Leaflet.MarkerCluster` implementation for more.
 
 ---
 
