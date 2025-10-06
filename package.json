@@ -62,7 +62,7 @@
     "eslint-plugin-vue": "^10.5.0",
     "fast-glob": "^3.3.3",
     "fs-extra": "^11.3.2",
-    "jsdom": "^26.1.0",
+    "jsdom": "^27.0.0",
     "prettier": "^3.6.2",
     "release-it": "^19.0.5",
     "ts-morph": "^27.0.0",
