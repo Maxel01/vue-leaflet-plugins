@@ -19,8 +19,8 @@ importers:
         version: 0.4.0
     devDependencies:
       '@maxel01/vue-leaflet':
-        specifier: ^1.0.0-beta.1
-        version: 1.0.0-beta.1(leaflet@2.0.0-alpha)(vue@3.5.22(typescript@5.8.3))
+        specifier: ^1.0.0-beta.2
+        version: 1.0.0-beta.2(leaflet@2.0.0-alpha)(vue@3.5.22(typescript@5.8.3))
       '@release-it/conventional-changelog':
         specifier: ^10.0.1
         version: 10.0.1(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.2.0)(release-it@19.0.5(@types/node@24.3.0)(magicast@0.3.5))
@@ -1047,6 +1047,12 @@ packages:
 
   '@maxel01/vue-leaflet@1.0.0-beta.1':
     resolution: {integrity: sha512-e8x/DL5CBGv3rMaMX9O16AUGmrWcFkwg1wqtarYIdm1LzznoR/+0OcN10G21xl1u68Np1/Q1h+90lQkWDnO3Sw==}
+    peerDependencies:
+      leaflet: ^2.0.0-alpha
+      vue: ^3.5.0
+
+  '@maxel01/vue-leaflet@1.0.0-beta.2':
+    resolution: {integrity: sha512-IA9vO1wrh4kN1JUL2DYKKBP3kbkbhaAUhBsRncG+sr5g7Aaeqv39TVkza3oM4iBohROEEoqnb0uVgj89IAMnRQ==}
     peerDependencies:
       leaflet: ^2.0.0-alpha
       vue: ^3.5.0
@@ -6731,6 +6737,12 @@ snapshots:
       vue: 3.5.22(typescript@5.8.3)
 
   '@maxel01/vue-leaflet@1.0.0-beta.1(leaflet@2.0.0-alpha)(vue@3.5.22(typescript@5.8.3))':
+    dependencies:
+      leaflet: 2.0.0-alpha
+      ts-debounce: 4.0.0
+      vue: 3.5.22(typescript@5.8.3)
+
+  '@maxel01/vue-leaflet@1.0.0-beta.2(leaflet@2.0.0-alpha)(vue@3.5.22(typescript@5.8.3))':
     dependencies:
       leaflet: 2.0.0-alpha
       ts-debounce: 4.0.0

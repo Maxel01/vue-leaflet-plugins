@@ -1,6 +1,7 @@
 import { flushPromises, mount, type VueWrapper } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
 import {
+    markerProps,
     mergeReactiveProps,
     mockAddLayer,
     mockRemoveLayer,
@@ -14,20 +15,17 @@ import type { RotatedMarker } from '@/libs/leaflet.rotatedmarker/leaflet.rotated
 import { LRotatedMarker } from '@/leaflet.rotatedmarker'
 import { LatLng } from 'leaflet'
 
-const rotatedMarkerProps = mergeReactiveProps(
-    {} /* TEST markerProps */,
-    {
-        rotationAngle: 60,
-        rotationOrigin: [4, 4],
-        expecting: {
-            rotationOrigin: (leafletObject: RotatedMarker) => {
-                expect(leafletObject.options.rotationOrigin).toStrictEqual(
-                    rotatedMarkerProps.rotationOrigin
-                )
-            }
+const rotatedMarkerProps = mergeReactiveProps(markerProps, {
+    rotationAngle: 60,
+    rotationOrigin: [4, 4],
+    expecting: {
+        rotationOrigin: (leafletObject: RotatedMarker) => {
+            expect(leafletObject.options.rotationOrigin).toStrictEqual(
+                rotatedMarkerProps.rotationOrigin
+            )
         }
     }
-)
+})
 
 export const createWrapper = async (props = {}, slots = {}) => {
     const wrapper = mount(LRotatedMarker, {
