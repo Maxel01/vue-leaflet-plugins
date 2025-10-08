@@ -9,7 +9,7 @@ importers:
   .:
     dependencies:
       leaflet:
-        specifier: ^2.0.0-alpha
+        specifier: 2.0.0-alpha
         version: 2.0.0-alpha
       leaflet.markercluster:
         specifier: ^1.5.3
