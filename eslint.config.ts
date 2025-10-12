@@ -11,13 +11,20 @@ import skipFormatting from '@vue/eslint-config-prettier/skip-formatting'
 
 export default defineConfigWithVueTs(
     {
-        name: '@vue-leaflet/vue-leaflet',
+        name: '@vue-leaflet/vue-leaflet-plugins',
         rules: {
             '@typescript-eslint/no-unused-vars': [
                 'error',
                 {
                     argsIgnorePattern: '^_',
                     varsIgnorePattern: '^_'
+                }
+            ],
+            '@typescript-eslint/consistent-type-imports': [
+                'warn',
+                {
+                    prefer: 'type-imports',
+                    disallowTypeAnnotations: false
                 }
             ]
         },
