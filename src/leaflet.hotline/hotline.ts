@@ -1,7 +1,7 @@
 import { type PolylineOptions } from 'leaflet'
 
 import type { Ref } from 'vue'
-import { type ColorPalette, Hotline } from '@/libs/leaflet.hotline/leaflet.hotline'
+import type { ColorPalette, Hotline } from '@/libs/leaflet.hotline/leaflet.hotline'
 import {
     type PolylineEmits,
     type PolylineProps,

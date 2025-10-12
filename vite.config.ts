@@ -24,7 +24,8 @@ export default defineConfig({
                 // Global variables for use in the UMD build
                 globals: {
                     vue: 'Vue',
-                    leaflet: 'L'
+                    leaflet: 'L',
+                    "@maxel01/vue-leaflet": 'vue-leaflet',
                 }
             }
         }
