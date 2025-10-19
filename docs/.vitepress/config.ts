@@ -5,13 +5,16 @@ import { alias } from '../../alias.config'
 export default defineConfig({
     title: 'Vue Leaflet Plugins',
     description: 'Documentation for the Vue Leaflet Plugins module',
-    head: [['link', { rel: 'icon', href: '/vue-leaflet-plugins/favicon.ico' }]],
+    head: [
+        ['link', { rel: 'icon', href: '/vue-leaflet-plugins/favicon.ico' }],
+        ['script', { src: 'https://scripts.simpleanalyticscdn.com/latest.js', async: 'true' }]
+    ],
     base: '/vue-leaflet-plugins/',
     vite: {
         resolve: {
             alias: {
                 ...alias,
-                '@maxel01/vue-leaflet-plugins': '@dist/vue-leaflet-plugins',
+                '@maxel01/vue-leaflet-plugins': '@dist/vue-leaflet-plugins'
             }
         }
     },
