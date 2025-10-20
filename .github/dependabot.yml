@@ -13,3 +13,10 @@ updates:
     commit-message:
       prefix: "build"
       include: "scope"
+    groups:
+      minor-deps:
+        update-types:
+          - "minor"
+      patch-deps:
+        update-types:
+          - "patch"
