@@ -13,13 +13,9 @@ Here is a basic example of how to use the `LMap` and `LTileLayer` components alo
 <!--@include: ../../playground/app/pages/leaflet.hotline/hotline.vue -->
 ```
 
-And here is how it should look :
-
-<script setup>
-import "leaflet/dist/leaflet.css";
-</script>
+And here is how it should look:
 
 <div class="demo">
-    <demo-hotline />
+    <demo-leaflet.hotline-hotline />
 </div>
 
