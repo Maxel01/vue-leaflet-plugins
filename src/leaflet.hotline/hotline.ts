@@ -10,8 +10,9 @@ import {
     setupPolyline
 } from '@maxel01/vue-leaflet'
 
-export interface HotlineProps<T extends PolylineOptions = PolylineOptions>
-    extends PolylineProps<T> {
+export interface HotlineProps<
+    T extends PolylineOptions = PolylineOptions
+> extends PolylineProps<T> {
     /**
      * Minimum z value
      * @reactive
