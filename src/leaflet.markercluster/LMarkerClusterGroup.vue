@@ -7,7 +7,7 @@ import {
     markerClusterGroupPropsDefaults,
     type MarkerClusterGroupEmits
 } from './markerClusterGroup'
-import { preparePolyfill } from '@/utils/polyfill'
+import { prepareMarkerClusterPolyfill } from '@/utils/polyfill'
 
 import 'leaflet.markercluster/dist/MarkerCluster.css'
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
@@ -44,7 +44,7 @@ function useMarkerClusterGroup() {
     const { options, methods } = setupMarkerClusterGroup(props, leafletObject, emit)
 
     onMounted(async () => {
-        preparePolyfill()
+        prepareMarkerClusterPolyfill()
         await import('leaflet.markercluster')
         leafletObject.value = markRaw(new L.MarkerClusterGroup(options))
 
