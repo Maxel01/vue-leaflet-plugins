@@ -1,19 +1,15 @@
-import { Marker, type MarkerOptions } from 'leaflet'
+import { type TemplateOptions, Template } from 'your-leaflet-component'
+import {
+    SuperClassProps,
+    superClassPropsDefaults,
+    setupSuperClass,
+    SuperClassEmits
+} from 'your-super-class'
 
 import type { Ref } from 'vue'
-import {
-    type MarkerEmits,
-    type MarkerProps,
-    markerPropsDefaults,
-    propsToLeafletOptions,
-    setupMarker
-} from '@maxel01/vue-leaflet'
+import { propsToLeafletOptions } from '@maxel01/vue-leaflet'
 
-// REMOVE
-export declare type Template = Marker
-export declare type TemplateOptions = MarkerOptions
-
-export interface TemplateProps extends MarkerProps {
+export interface TemplateProps extends SuperClassProps {
     /**
      * New Prop
      * @reactive
@@ -22,22 +18,31 @@ export interface TemplateProps extends MarkerProps {
 }
 
 export const templatePropsDefaults = {
-    ...markerPropsDefaults
+    ...superClassPropsDefaults
 }
 
-export interface TemplateEmits extends MarkerEmits {}
+export interface TemplateEmits extends SuperClassEmits {
+    /**
+     * Triggers when the component is ready
+     */
+    (event: 'ready', layer: Template): void
+}
 
 export const setupTemplate = (
     props: TemplateProps,
     leafletRef: Ref<Template | undefined>,
     emit: TemplateEmits
 ) => {
-    const { options: markerOptions, methods: markerMethods } = setupMarker(props, leafletRef, emit)
+    const { options: superClassOptions, methods: superClassMethods } = setupSuperClass(
+        props,
+        leafletRef,
+        emit
+    )
 
-    const options = propsToLeafletOptions<TemplateOptions>(props, markerOptions)
+    const options = propsToLeafletOptions<TemplateOptions>(props, superClassOptions)
 
     const methods = {
-        ...markerMethods,
+        ...superClassMethods,
         setNewProp(_min: number) {
             // ...
         }

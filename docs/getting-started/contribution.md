@@ -57,7 +57,7 @@ Follow this guide to add your own plugin:
 
 ### 2. Create the Component
 
-Rename the files and replace all `template` and `Template` with appropriate names. \
+Rename the files and replace all `template` and `Template` with appropriate names. Also, replace all `SuperClass` with your parent class (e.g. you create a custom marker, you'll extend `Marker`) \
 Follow the [guide](https://maxel01.github.io/vue-leaflet/getting-started/contribution.html#create-a-new-component) in vue-leaflet to create your component.
 
 ### 3. Register the Component
