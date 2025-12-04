@@ -2,7 +2,7 @@
 import { markRaw, nextTick, onMounted, ref, useAttrs } from 'vue'
 import { AddLayerInjection, assertInject, propsBinder, remapEvents } from '@maxel01/vue-leaflet'
 import { setupTemplate, type TemplateProps, templatePropsDefaults } from '@/plugin-template/template'
-import { Template} from 'your-leaflet-component'
+import { Template} from 'your-leaflet-class'
 /**
  * > A Leaflet plugin for ...
  * @demo template {13-22}
