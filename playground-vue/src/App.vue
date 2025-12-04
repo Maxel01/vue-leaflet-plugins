@@ -5,6 +5,10 @@
     <div class="main-wrapper">
         <div class="menu">
             <RouterLink to="/">Home</RouterLink>
+            <RouterLink to="/leaflet.donut">Leaflet.Donut</RouterLink>
+            <RouterLink to="/leaflet.donut/donut">LDonut</RouterLink>
+            <RouterLink to="/leaflet.heat">Leaflet.Heat</RouterLink>
+            <RouterLink to="/leaflet.heat/heat-layer">LHeatLayer</RouterLink>
             <RouterLink to="/leaflet.hotline">Leaflet.Hotline</RouterLink>
             <RouterLink to="/leaflet.hotline/hotline">LHotline</RouterLink>
             <RouterLink to="/leaflet.markercluster">Leaflet.MarkerCluster</RouterLink>
