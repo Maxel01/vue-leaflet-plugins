@@ -8,7 +8,7 @@ import { Hotline } from '@/libs/leaflet.hotline/leaflet.hotline'
  * > A polyline with colored gradients.
  * @demo hotline {13-22}
  */
-defineOptions({})
+defineOptions({ name: 'LHotline' })
 const props = withDefaults(defineProps<HotlineProps>(), hotlinePropsDefaults)
 const emit = defineEmits<HotlineEmits>()
 

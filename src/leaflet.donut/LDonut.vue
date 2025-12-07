@@ -14,7 +14,7 @@ import { Donut } from '@/libs/leaflet.donut/leaflet.donut'
  * > A Leaflet plugin for drawing donuts.
  * @demo donut {3,13}
  */
-defineOptions({})
+defineOptions({ name: 'LDonut' })
 const props = withDefaults(defineProps<DonutProps>(), donutPropsDefaults)
 const emit = defineEmits<DonutEmits>()
 
