@@ -14,7 +14,7 @@ import {
  * > A Leaflet plugin for heatmaps
  * @demo heat-layer {7,17}
  */
-defineOptions({})
+defineOptions({ name: 'LHeatLayer' })
 const props = withDefaults(defineProps<HeatLayerProps>(), heatLayerPropsDefaults)
 const emit = defineEmits<HeatLayerEmits>()
 

@@ -7,7 +7,7 @@ import { Template} from 'your-leaflet-class'
  * > A Leaflet plugin for ...
  * @demo template {13-22}
  */
-defineOptions({})
+defineOptions({name: 'Your-Component'})
 const props = withDefaults(defineProps<TemplateProps>(), templatePropsDefaults)
 const emit = defineEmits<TemplateProps>()
 

@@ -13,7 +13,7 @@ import {
  * > Leaflet plugin to enable the rotation of map marker icons
  * @demo rotated-marker {13-17}
  */
-defineOptions({})
+defineOptions({ name: 'LRotatedMarker' })
 const props = withDefaults(defineProps<RotatedMarkerProps>(), rotatedMarkerPropsDefaults)
 const emit = defineEmits<RotatedMarkerEmits>()
 

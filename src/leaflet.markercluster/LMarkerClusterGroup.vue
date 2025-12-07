@@ -16,7 +16,7 @@ import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
  * > Provides Beautiful Animated Marker Clustering functionality for Leaflet, a JS library for interactive maps.
  * @demo marker-cluster-group {7-21,31-37}
  */
-defineOptions({})
+defineOptions({ name: 'LMarkerClusterGroup' })
 const props = withDefaults(defineProps<MarkerClusterGroupProps>(), markerClusterGroupPropsDefaults)
 const emit = defineEmits<MarkerClusterGroupEmits>()
 
