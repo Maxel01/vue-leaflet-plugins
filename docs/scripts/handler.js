@@ -29,18 +29,16 @@ export default function propOriginHandler(documentation, _componentDefinition, _
     const doc = documentation.toObject()
     if (!doc.props) {
         console.warn(`[propOriginHandler] props is ${doc.props}`)
-        return
-    }
-    for (const prop of doc.props) {
-        prop['interface'] = result.get(prop.name).interface
-        const typeInfo = prop.type
-
-        if (typeInfo?.name === 'union' && Array.isArray(typeInfo.elements)) {
-            prop.type.name = typeInfo.elements.map((el) => el.name).join(' \\| ')
+    } else {
+        for (const prop of doc.props) {
+            prop['interface'] = result.get(prop.name).interface
+            if (prop.type) {
+                prop.type.name = formatType(prop.type)
+            }
         }
     }
     result.forEach((value, key) => {
-        if (doc.props.some((prop) => prop.name === key)) return
+        if (doc.props?.some((prop) => prop.name === key)) return
         documentation.propsMap.set(key, { ...value })
     })
 }
@@ -93,4 +91,21 @@ function collectProps(interfaceDecl, resultMap, level = 0) {
             }
         }
     }
+}
+function formatType(typeInfo) {
+    if (!typeInfo) return ''
+
+    if (typeInfo.name === 'Array' && Array.isArray(typeInfo.elements)) {
+        if (typeInfo.elements.length === 1) {
+            return `${formatType(typeInfo.elements[0])}[]`
+        } else if (typeInfo.elements.length > 1) {
+            return `[${typeInfo.elements.map(formatType).join(', ')}]`
+        }
+        return `${formatType(typeInfo.elements[0])}[]`
+    }
+    if (typeInfo.name === 'union' && Array.isArray(typeInfo.elements)) {
+        return typeInfo.elements.map(formatType).join(' \\| ')
+    }
+
+    return typeInfo.name
 }
