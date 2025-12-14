@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.0.4](https://github.com/maxel01/vue-leaflet-plugins/compare/v0.0.3...v0.0.4) (2025-12-14)
+
+### ✨ Features
+
+* **debug:** Adding name to the components option ([#92](https://github.com/maxel01/vue-leaflet-plugins/issues/92)) ([a2281aa](https://github.com/maxel01/vue-leaflet-plugins/commit/a2281aa9105ada3c63af546a1492366ba22d2ddc))
+
+### 🐛 Bug Fixes
+
+* **leaflet.markercluster:** add additional polyfills to make `zommToBoundsOnClick` working. ([#97](https://github.com/maxel01/vue-leaflet-plugins/issues/97)) ([cc09d49](https://github.com/maxel01/vue-leaflet-plugins/commit/cc09d490774ec765f2229934adb0d3fb427cf844))
+* **playground-vue:** add missing links and fix broken component paths ([#91](https://github.com/maxel01/vue-leaflet-plugins/issues/91)) ([55f3bc6](https://github.com/maxel01/vue-leaflet-plugins/commit/55f3bc6be01c9f39ceb2e05f152cc6fe852fe217))
+
+### 📝 Documentation
+
+* improve typing for array and union types ([#96](https://github.com/maxel01/vue-leaflet-plugins/issues/96)) ([118ede0](https://github.com/maxel01/vue-leaflet-plugins/commit/118ede0f256f339ecde313158283fe09c4610c1d))
+* **template:** improve template imports for easier usage ([#90](https://github.com/maxel01/vue-leaflet-plugins/issues/90)) ([0d0a44f](https://github.com/maxel01/vue-leaflet-plugins/commit/0d0a44fa3b14bf4df19cfa0d16dcd05f8f63b443))
+
 ## [0.0.3](https://github.com/maxel01/vue-leaflet-plugins/compare/v0.0.2...v0.0.3) (2025-12-03)
 
 ### ✨ Features
