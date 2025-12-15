@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@dist/vue-leaflet-plugins": "link:..",
-    "@maxel01/vue-leaflet": "1.0.0-beta.4",
+    "@maxel01/vue-leaflet": "1.0.0-beta.5",
     "@maxel01/vue-leaflet-plugins": "0.0.1-alpha.1",
     "leaflet": "2.0.0-alpha",
     "nuxt": "^4.2.1",
