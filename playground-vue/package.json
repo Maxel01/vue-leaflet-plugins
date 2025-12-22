@@ -15,12 +15,12 @@
   "dependencies": {
     "@maxel01/vue-leaflet": "1.0.0-beta.5",
     "leaflet": "2.0.0-alpha",
-    "vue": "^3.5.24",
+    "vue": "^3.5.26",
     "vue-router": "^4.6.4"
   },
   "devDependencies": {
     "@tsconfig/node22": "^22.0.4",
-    "@types/node": "^25.0.2",
+    "@types/node": "^25.0.3",
     "@vitejs/plugin-vue": "^6.0.3",
     "@vue/tsconfig": "^0.8.1",
     "typescript": "~5.9.3",
