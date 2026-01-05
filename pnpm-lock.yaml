@@ -13,14 +13,14 @@ importers:
         version: 2.0.0-alpha
       leaflet.markercluster:
         specifier: ^1.5.3
-        version: 1.5.3
+        version: 1.5.3(leaflet@2.0.0-alpha)
       simpleheat:
         specifier: ^0.4.0
         version: 0.4.0
     devDependencies:
       '@maxel01/vue-leaflet':
-        specifier: ^1.0.0-beta.5
-        version: 1.0.0-beta.5(leaflet@2.0.0-alpha)(vue@3.5.26(typescript@5.9.3))
+        specifier: ^1.0.0-beta.6
+        version: 1.0.0-beta.6(leaflet@2.0.0-alpha)(vue@3.5.26(typescript@5.9.3))
       '@release-it/conventional-changelog':
         specifier: ^10.0.4
         version: 10.0.4(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.2.1)(release-it@19.2.2(@types/node@25.0.3)(magicast@0.5.1))
@@ -115,11 +115,11 @@ importers:
         specifier: link:..
         version: link:..
       '@maxel01/vue-leaflet':
-        specifier: 1.0.0-beta.5
-        version: 1.0.0-beta.5(leaflet@2.0.0-alpha)(vue@3.5.26(typescript@5.9.3))
+        specifier: 1.0.0-beta.6
+        version: 1.0.0-beta.6(leaflet@2.0.0-alpha)(vue@3.5.26(typescript@5.9.3))
       '@maxel01/vue-leaflet-plugins':
         specifier: 0.0.1-alpha.1
-        version: 0.0.1-alpha.1(@maxel01/vue-leaflet@1.0.0-beta.5(leaflet@2.0.0-alpha)(vue@3.5.26(typescript@5.9.3)))(leaflet@2.0.0-alpha)(vue@3.5.26(typescript@5.9.3))
+        version: 0.0.1-alpha.1(@maxel01/vue-leaflet@1.0.0-beta.6(leaflet@2.0.0-alpha)(vue@3.5.26(typescript@5.9.3)))(leaflet@2.0.0-alpha)(vue@3.5.26(typescript@5.9.3))
       leaflet:
         specifier: 2.0.0-alpha
         version: 2.0.0-alpha
@@ -136,8 +136,8 @@ importers:
   playground-vue:
     dependencies:
       '@maxel01/vue-leaflet':
-        specifier: 1.0.0-beta.5
-        version: 1.0.0-beta.5(leaflet@2.0.0-alpha)(vue@3.5.26(typescript@5.9.3))
+        specifier: 1.0.0-beta.6
+        version: 1.0.0-beta.6(leaflet@2.0.0-alpha)(vue@3.5.26(typescript@5.9.3))
       leaflet:
         specifier: 2.0.0-alpha
         version: 2.0.0-alpha
@@ -1000,8 +1000,8 @@ packages:
       leaflet: ^2.0.0-alpha
       vue: ^3.5.0
 
-  '@maxel01/vue-leaflet@1.0.0-beta.5':
-    resolution: {integrity: sha512-21AHSfoFSbakTVnl2XhGK8jj1oLx8HhOeatsdHl+1QBWZdNcZYtxtKz/P0Mru+4WAH0vs41hdLT6QAcjSGrpTw==}
+  '@maxel01/vue-leaflet@1.0.0-beta.6':
+    resolution: {integrity: sha512-Bd77BSRHw9o4tWG14QAQWykAx0XMOCkisc45regwdqfmgjoIz1EUXujfId9wni1UvOgUcVttOgnv+HkXDwIdmg==}
     peerDependencies:
       leaflet: ^2.0.0-alpha
       vue: ^3.5.0
@@ -6348,13 +6348,13 @@ snapshots:
       - encoding
       - supports-color
 
-  '@maxel01/vue-leaflet-plugins@0.0.1-alpha.1(@maxel01/vue-leaflet@1.0.0-beta.5(leaflet@2.0.0-alpha)(vue@3.5.26(typescript@5.9.3)))(leaflet@2.0.0-alpha)(vue@3.5.26(typescript@5.9.3))':
+  '@maxel01/vue-leaflet-plugins@0.0.1-alpha.1(@maxel01/vue-leaflet@1.0.0-beta.6(leaflet@2.0.0-alpha)(vue@3.5.26(typescript@5.9.3)))(leaflet@2.0.0-alpha)(vue@3.5.26(typescript@5.9.3))':
     dependencies:
-      '@maxel01/vue-leaflet': 1.0.0-beta.5(leaflet@2.0.0-alpha)(vue@3.5.26(typescript@5.9.3))
+      '@maxel01/vue-leaflet': 1.0.0-beta.6(leaflet@2.0.0-alpha)(vue@3.5.26(typescript@5.9.3))
       leaflet: 2.0.0-alpha
       vue: 3.5.26(typescript@5.9.3)
 
-  '@maxel01/vue-leaflet@1.0.0-beta.5(leaflet@2.0.0-alpha)(vue@3.5.26(typescript@5.9.3))':
+  '@maxel01/vue-leaflet@1.0.0-beta.6(leaflet@2.0.0-alpha)(vue@3.5.26(typescript@5.9.3))':
     dependencies:
       leaflet: 2.0.0-alpha
       ts-debounce: 4.0.0
@@ -9382,7 +9382,9 @@ snapshots:
     dependencies:
       readable-stream: 2.3.8
 
-  leaflet.markercluster@1.5.3: {}
+  leaflet.markercluster@1.5.3(leaflet@2.0.0-alpha):
+    dependencies:
+      leaflet: 2.0.0-alpha
 
   leaflet@2.0.0-alpha: {}
 
