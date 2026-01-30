@@ -64,8 +64,8 @@
     "fast-glob": "^3.3.3",
     "fs-extra": "^11.3.3",
     "jsdom": "^27.4.0",
-    "prettier": "^3.8.0",
-    "release-it": "^19.2.3",
+    "prettier": "^3.8.1",
+    "release-it": "^19.2.4",
     "ts-morph": "^27.0.2",
     "typescript": "~5.9.3",
     "vite": "^7.3.1",
@@ -74,7 +74,7 @@
     "vitest": "^3.2.4",
     "vue": "^3.5.27",
     "vue-docgen-api": "^4.79.2",
-    "vue-tsc": "^3.2.2"
+    "vue-tsc": "^3.2.4"
   },
   "dependencies": {
     "leaflet.markercluster": "^1.5.3",
