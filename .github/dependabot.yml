@@ -16,7 +16,7 @@ updates:
       prefix: "build"
       include: "scope"
     allow:
-      - dependency-type: "all"
+      - dependency-type: "direct"
     groups:
       minor-deps:
         update-types:
