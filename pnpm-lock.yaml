@@ -19,8 +19,8 @@ importers:
         version: 0.4.0
     devDependencies:
       '@maxel01/vue-leaflet':
-        specifier: ^1.0.0-beta.6
-        version: 1.0.0-beta.6(leaflet@2.0.0-alpha)(vue@3.5.32(typescript@5.9.3))
+        specifier: ^1.0.0-beta.7
+        version: 1.0.0-beta.7(leaflet@2.0.0-alpha)(vue@3.5.32(typescript@5.9.3))
       '@release-it/conventional-changelog':
         specifier: ^10.0.6
         version: 10.0.6(conventional-commits-filter@5.0.0)(conventional-commits-parser@6.3.0)(release-it@19.2.4(@types/node@25.5.0)(magicast@0.5.2))
@@ -115,11 +115,11 @@ importers:
         specifier: link:..
         version: link:..
       '@maxel01/vue-leaflet':
-        specifier: 1.0.0-beta.6
-        version: 1.0.0-beta.6(leaflet@2.0.0-alpha)(vue@3.5.32(typescript@5.9.3))
+        specifier: 1.0.0-beta.7
+        version: 1.0.0-beta.7(leaflet@2.0.0-alpha)(vue@3.5.32(typescript@5.9.3))
       '@maxel01/vue-leaflet-plugins':
         specifier: 0.0.1-alpha.1
-        version: 0.0.1-alpha.1(@maxel01/vue-leaflet@1.0.0-beta.6(leaflet@2.0.0-alpha)(vue@3.5.32(typescript@5.9.3)))(leaflet@2.0.0-alpha)(vue@3.5.32(typescript@5.9.3))
+        version: 0.0.1-alpha.1(@maxel01/vue-leaflet@1.0.0-beta.7(leaflet@2.0.0-alpha)(vue@3.5.32(typescript@5.9.3)))(leaflet@2.0.0-alpha)(vue@3.5.32(typescript@5.9.3))
       leaflet:
         specifier: 2.0.0-alpha
         version: 2.0.0-alpha
@@ -136,8 +136,8 @@ importers:
   playground-vue:
     dependencies:
       '@maxel01/vue-leaflet':
-        specifier: 1.0.0-beta.6
-        version: 1.0.0-beta.6(leaflet@2.0.0-alpha)(vue@3.5.32(typescript@5.9.3))
+        specifier: 1.0.0-beta.7
+        version: 1.0.0-beta.7(leaflet@2.0.0-alpha)(vue@3.5.32(typescript@5.9.3))
       leaflet:
         specifier: 2.0.0-alpha
         version: 2.0.0-alpha
@@ -857,8 +857,8 @@ packages:
       leaflet: ^2.0.0-alpha
       vue: ^3.5.0
 
-  '@maxel01/vue-leaflet@1.0.0-beta.6':
-    resolution: {integrity: sha512-Bd77BSRHw9o4tWG14QAQWykAx0XMOCkisc45regwdqfmgjoIz1EUXujfId9wni1UvOgUcVttOgnv+HkXDwIdmg==}
+  '@maxel01/vue-leaflet@1.0.0-beta.7':
+    resolution: {integrity: sha512-8n4b2l8zDX11V72FgL98rpMAOngmmuZW5NDSELjpuyM6qowbzJ5F/5cS850wCu3/6wn0RQGu28NB9qs/sc7oCQ==}
     peerDependencies:
       leaflet: ^2.0.0-alpha
       vue: ^3.5.0
@@ -5057,9 +5057,6 @@ packages:
     peerDependencies:
       typescript: '>=4.8.4'
 
-  ts-debounce@4.0.0:
-    resolution: {integrity: sha512-+1iDGY6NmOGidq7i7xZGA4cm8DAa6fqdYcvO5Z6yBevH++Bdo9Qt/mN0TzHUgcCcKv1gmh9+W5dHqz8pMWbCbg==}
-
   ts-map@1.0.3:
     resolution: {integrity: sha512-vDWbsl26LIcPGmDpoVzjEP6+hvHZkBkLW7JpvwbCv/5IYPJlsbzCVXY3wsCeAxAUeTclNOUZxnLdGh3VBD/J6w==}
 
@@ -6315,16 +6312,15 @@ snapshots:
       - encoding
       - supports-color
 
-  '@maxel01/vue-leaflet-plugins@0.0.1-alpha.1(@maxel01/vue-leaflet@1.0.0-beta.6(leaflet@2.0.0-alpha)(vue@3.5.32(typescript@5.9.3)))(leaflet@2.0.0-alpha)(vue@3.5.32(typescript@5.9.3))':
+  '@maxel01/vue-leaflet-plugins@0.0.1-alpha.1(@maxel01/vue-leaflet@1.0.0-beta.7(leaflet@2.0.0-alpha)(vue@3.5.32(typescript@5.9.3)))(leaflet@2.0.0-alpha)(vue@3.5.32(typescript@5.9.3))':
     dependencies:
-      '@maxel01/vue-leaflet': 1.0.0-beta.6(leaflet@2.0.0-alpha)(vue@3.5.32(typescript@5.9.3))
+      '@maxel01/vue-leaflet': 1.0.0-beta.7(leaflet@2.0.0-alpha)(vue@3.5.32(typescript@5.9.3))
       leaflet: 2.0.0-alpha
       vue: 3.5.32(typescript@5.9.3)
 
-  '@maxel01/vue-leaflet@1.0.0-beta.6(leaflet@2.0.0-alpha)(vue@3.5.32(typescript@5.9.3))':
+  '@maxel01/vue-leaflet@1.0.0-beta.7(leaflet@2.0.0-alpha)(vue@3.5.32(typescript@5.9.3))':
     dependencies:
       leaflet: 2.0.0-alpha
-      ts-debounce: 4.0.0
       vue: 3.5.32(typescript@5.9.3)
 
   '@microsoft/api-extractor-model@7.32.1(@types/node@25.5.0)':
@@ -11014,8 +11010,6 @@ snapshots:
   ts-api-utils@2.5.0(typescript@5.9.3):
     dependencies:
       typescript: 5.9.3
-
-  ts-debounce@4.0.0: {}
 
   ts-map@1.0.3: {}
 
