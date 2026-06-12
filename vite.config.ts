@@ -2,7 +2,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import dts from 'vite-plugin-dts'
+import dts from 'unplugin-dts/vite'
 import { alias } from './alias.config'
 
 // https://vite.dev/config/
@@ -18,7 +18,7 @@ export default defineConfig({
             name: 'vue-leaflet-plugins',
             fileName: (fmt) => `vue-leaflet-plugins.${fmt}.js`
         },
-        rollupOptions: {
+        rolldownOptions: {
             external: ['vue', 'leaflet', /^leaflet\/.*/, '@maxel01/vue-leaflet'],
             output: {
                 // Global variables for use in the UMD build
