@@ -1,14 +1,14 @@
 {
   "extends": "./tsconfig.json",
   "include": [
-    "src"
+    "src/**/*.ts",
+    "src/**/*.vue"
   ],
   "exclude": ["src/plugin-template"],
   "compilerOptions": {
     "declaration": true,
     "emitDeclarationOnly": true,
     "declarationDir": "dist",
-    "composite": true,
-    "module": "ESNext"
+    "composite": true
   }
 }
