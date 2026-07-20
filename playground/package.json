@@ -16,8 +16,8 @@
     "@maxel01/vue-leaflet": "1.0.0-beta.7",
     "@maxel01/vue-leaflet-plugins": "0.0.4",
     "leaflet": "2.0.0-alpha",
-    "nuxt": "^4.4.8",
+    "nuxt": "^4.5.0",
     "vue": "^3.5.39",
-    "vue-router": "^5.1.0"
+    "vue-router": "^5.2.0"
   }
 }
