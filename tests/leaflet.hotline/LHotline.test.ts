@@ -5,6 +5,7 @@ import { LatLng, type Polyline } from 'leaflet'
 import {
     mergeReactiveProps,
     mockAddLayer,
+    mockHideLayer,
     mockRemoveLayer,
     polylineProps,
     testAddLayer,
@@ -12,8 +13,8 @@ import {
     testPropsBindingToLeaflet,
     testRemoveLayerOnUnmount
 } from '@maxel01/vue-leaflet/tests'
-import { AddLayerInjection, RemoveLayerInjection } from '@maxel01/vue-leaflet'
-import { Hotline } from '@/libs/leaflet.hotline/leaflet.hotline'
+import { AddLayerInjection, HideLayerInjection, RemoveLayerInjection } from '@maxel01/vue-leaflet'
+import type { Hotline } from '@/libs/leaflet.hotline/leaflet.hotline'
 
 const hotlineProps = mergeReactiveProps(polylineProps, {
     latLngs: [
@@ -56,6 +57,7 @@ const createWrapper = async (props = {}) => {
         global: {
             provide: {
                 [AddLayerInjection as symbol]: mockAddLayer,
+                [HideLayerInjection as symbol]: mockHideLayer,
                 [RemoveLayerInjection as symbol]: mockRemoveLayer
             }
         }

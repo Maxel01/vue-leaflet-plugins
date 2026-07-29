@@ -1,11 +1,12 @@
 import { flushPromises, shallowMount, type VueWrapper } from '@vue/test-utils'
 import { describe, expect, it, vi } from 'vitest'
 import { LMarkerClusterGroup } from '@/leaflet.markercluster'
-import { AddLayerInjection, RemoveLayerInjection } from '@maxel01/vue-leaflet'
+import { AddLayerInjection, HideLayerInjection, RemoveLayerInjection } from '@maxel01/vue-leaflet'
 import {
     featureGroupProps,
     mergeReactiveProps,
     mockAddLayer,
+    mockHideLayer,
     mockRemoveLayer,
     testAddLayer,
     testEmitsReady,
@@ -23,6 +24,7 @@ const createWrapper = async (props = {}) => {
         global: {
             provide: {
                 [AddLayerInjection as symbol]: mockAddLayer,
+                [HideLayerInjection as symbol]: mockHideLayer,
                 [RemoveLayerInjection as symbol]: mockRemoveLayer
             }
         }

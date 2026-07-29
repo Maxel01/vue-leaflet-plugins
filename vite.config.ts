@@ -11,6 +11,9 @@ export default defineConfig({
     resolve: {
         alias
     },
+    css: {
+        postcss: {}
+    },
     build: {
         lib: {
             entry: fileURLToPath(new URL('./src/plugins.ts', import.meta.url)),
@@ -25,7 +28,7 @@ export default defineConfig({
                 globals: {
                     vue: 'Vue',
                     leaflet: 'L',
-                    "@maxel01/vue-leaflet": 'vue-leaflet',
+                    '@maxel01/vue-leaflet': 'vue-leaflet'
                 }
             }
         }

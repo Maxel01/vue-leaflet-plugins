@@ -11,6 +11,9 @@ export default defineConfig({
     ],
     base: '/vue-leaflet-plugins/',
     vite: {
+        css: {
+            postcss: {}
+        },
         resolve: {
             alias: {
                 ...alias,

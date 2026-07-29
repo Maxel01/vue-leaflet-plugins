@@ -5,13 +5,14 @@ import {
     layerProps,
     mergeReactiveProps,
     mockAddLayer,
+    mockHideLayer,
     mockRemoveLayer,
     testAddLayer,
     testEmitsReady,
     testPropsBindingToLeaflet,
     testRemoveLayerOnUnmount
 } from '@maxel01/vue-leaflet/tests'
-import { AddLayerInjection, RemoveLayerInjection } from '@maxel01/vue-leaflet'
+import { AddLayerInjection, HideLayerInjection, RemoveLayerInjection } from '@maxel01/vue-leaflet'
 import { LHeatLayer } from '@/leaflet.heat'
 import type { HeatLayer } from '@/libs/leaflet.heat/leaflet.heat.ts'
 
@@ -55,6 +56,7 @@ const createWrapper = async (props = {}) => {
         global: {
             provide: {
                 [AddLayerInjection as symbol]: mockAddLayer,
+                [HideLayerInjection as symbol]: mockHideLayer,
                 [RemoveLayerInjection as symbol]: mockRemoveLayer
             }
         }
