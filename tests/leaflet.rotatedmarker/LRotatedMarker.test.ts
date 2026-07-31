@@ -4,13 +4,14 @@ import {
     markerProps,
     mergeReactiveProps,
     mockAddLayer,
+    mockHideLayer,
     mockRemoveLayer,
     testAddLayer,
     testEmitsReady,
     testPropsBindingToLeaflet,
     testRemoveLayerOnUnmount
 } from '@maxel01/vue-leaflet/tests'
-import { AddLayerInjection, RemoveLayerInjection } from '@maxel01/vue-leaflet'
+import { AddLayerInjection, HideLayerInjection, RemoveLayerInjection } from '@maxel01/vue-leaflet'
 import type { RotatedMarker } from '@/libs/leaflet.rotatedmarker/leaflet.rotatedMarker'
 import { LRotatedMarker } from '@/leaflet.rotatedmarker'
 import { LatLng } from 'leaflet'
@@ -37,6 +38,7 @@ export const createWrapper = async (props = {}, slots = {}) => {
         global: {
             provide: {
                 [AddLayerInjection as symbol]: mockAddLayer,
+                [HideLayerInjection as symbol]: mockHideLayer,
                 [RemoveLayerInjection as symbol]: mockRemoveLayer
             }
         }

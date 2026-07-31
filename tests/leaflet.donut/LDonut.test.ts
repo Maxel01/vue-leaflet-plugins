@@ -1,12 +1,13 @@
 import { flushPromises, shallowMount, type VueWrapper } from '@vue/test-utils'
 import { describe, expect, it } from 'vitest'
-import { Circle, LatLng } from 'leaflet'
+import { type Circle, LatLng } from 'leaflet'
 import { LDonut } from '@/leaflet.donut'
-import { AddLayerInjection, RemoveLayerInjection } from '@maxel01/vue-leaflet'
+import { AddLayerInjection, HideLayerInjection, RemoveLayerInjection } from '@maxel01/vue-leaflet'
 import {
     circleProps,
     mergeReactiveProps,
     mockAddLayer,
+    mockHideLayer,
     mockRemoveLayer,
     testAddLayer,
     testEmitsReady,
@@ -30,6 +31,7 @@ const createWrapper = async (props = {}) => {
         global: {
             provide: {
                 [AddLayerInjection as symbol]: mockAddLayer,
+                [HideLayerInjection as symbol]: mockHideLayer,
                 [RemoveLayerInjection as symbol]: mockRemoveLayer
             }
         }
