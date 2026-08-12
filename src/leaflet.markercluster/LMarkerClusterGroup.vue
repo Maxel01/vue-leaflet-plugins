@@ -12,6 +12,13 @@ import { prepareMarkerClusterPolyfill } from '@/utils/polyfill'
 import 'leaflet.markercluster/dist/MarkerCluster.css'
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
 
+// Internal leaflet.markercluster members used by the `_moveEnd` animation-state fix below.
+interface MarkerClusterAnimationInternals {
+    _inZoomAnimation: number
+    _processQueue(): void
+    _moveEnd(this: MarkerClusterAnimationInternals): void
+}
+
 /**
  * > Provides Beautiful Animated Marker Clustering functionality for Leaflet, a JS library for interactive maps.
  * @demo marker-cluster-group {7-21,31-37}
@@ -46,7 +53,28 @@ function useMarkerClusterGroup() {
     onMounted(async () => {
         prepareMarkerClusterPolyfill()
         await import('leaflet.markercluster')
-        leafletObject.value = markRaw(new L.MarkerClusterGroup(options))
+
+        const group = new L.MarkerClusterGroup(options) as MarkerClusterGroup & MarkerClusterAnimationInternals
+        // Fix a long-standing leaflet.markercluster bug: when a map move lands while a
+        // cluster zoom animation is still pending (its cleanup is deferred on a ~300ms
+        // queue), `_moveEnd` bails out (`if (this._inZoomAnimation) return;`) and is never
+        // retried, so markers in the freshly revealed area are dropped and vanish until the
+        // next interaction — the "markers disappear on resize" symptom. Instead of dropping
+        // the move, finalise the pending animation synchronously by flushing its queue, then
+        // handle the move against a clean, fully settled state.
+        // Keep this fix until Leaflet/Leaflet.markercluster#1124 is merged.
+        // Refs: Leaflet/Leaflet.markercluster#140, #886, #512, #1056.
+        const originalMoveEnd = group._moveEnd
+        group._moveEnd = function (this: MarkerClusterAnimationInternals): void {
+            if (this._inZoomAnimation) {
+                this._processQueue()
+            }
+            if (this._inZoomAnimation) {
+                return // safety guard; should not happen once the queue is flushed
+            }
+            originalMoveEnd.call(this)
+        }
+        leafletObject.value = markRaw(group)
 
         const { listeners } = remapEvents(attrs)
         leafletObject.value.on(listeners)
