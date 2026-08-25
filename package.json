@@ -53,7 +53,7 @@
     "@types/simpleheat": "^0.4.3",
     "@typescript-eslint/eslint-plugin": "^8.67.0",
     "@vitejs/plugin-vue": "^6.0.8",
-    "@vitest/coverage-v8": "4.1.10",
+    "@vitest/coverage-v8": "4.1.11",
     "@vitest/eslint-plugin": "^1.6.27",
     "@vue/eslint-config-prettier": "^10.2.0",
     "@vue/eslint-config-typescript": "^14.9.0",
@@ -71,10 +71,10 @@
     "unplugin-dts": "^1.0.3",
     "vite": "^8.2.2",
     "vitepress": "2.0.0-alpha.17",
-    "vitest": "^4.1.10",
+    "vitest": "^4.1.11",
     "vue": "^3.5.41",
     "vue-docgen-api": "^4.79.2",
-    "vue-tsc": "^3.3.9"
+    "vue-tsc": "^3.3.11"
   },
   "dependencies": {
     "leaflet.markercluster": "^1.5.3",
