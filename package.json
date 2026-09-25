@@ -9,6 +9,15 @@
   "unpkg": "dist/vue-leaflet-plugins.umd.js",
   "module": "dist/vue-leaflet-plugins.es.js",
   "types": "./dist/src/plugins.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/src/plugins.d.ts",
+      "import": "./dist/vue-leaflet-plugins.es.js",
+      "require": "./dist/vue-leaflet-plugins.cjs.js"
+    },
+    "./dist/vue-leaflet-plugins.css": "./dist/vue-leaflet-plugins.css",
+    "./style.css": "./dist/vue-leaflet-plugins.css"
+  },
   "files": [
     "dist/",
     "README.md",
