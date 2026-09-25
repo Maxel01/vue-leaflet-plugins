@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.0.5](https://github.com/Maxel01/vue-leaflet-plugins/compare/v0.0.4...v0.0.5) (2026-09-25)
+
+### 🐛 Bug Fixes
+
+* **build:** define package exports field for Node.js ESM and SSR compatibility ([#220](https://github.com/Maxel01/vue-leaflet-plugins/issues/220)) ([a7516ac](https://github.com/Maxel01/vue-leaflet-plugins/commit/a7516accd9a022a2777ba6855a742492c327c763))
+
+### 🚧 Chores
+
+* **ci:** update node and pnpm ([#170](https://github.com/Maxel01/vue-leaflet-plugins/issues/170)) ([df382ff](https://github.com/Maxel01/vue-leaflet-plugins/commit/df382ff70ce5bef1abdc4075fe09585c6c67a9ef))
+* configure dependabot for github actions ([#171](https://github.com/Maxel01/vue-leaflet-plugins/issues/171)) ([cc61251](https://github.com/Maxel01/vue-leaflet-plugins/commit/cc6125199c2f8aac7118935e05a3b24ae9a6199c))
+* move from vite-plugin-dts to unplugin-dts and improve its config ([#182](https://github.com/Maxel01/vue-leaflet-plugins/issues/182)) ([ea43b92](https://github.com/Maxel01/vue-leaflet-plugins/commit/ea43b926bc0d7e768b0206f7c61575109b47d6cc))
+
 ## [0.0.4](https://github.com/maxel01/vue-leaflet-plugins/compare/v0.0.3...v0.0.4) (2025-12-14)
 
 ### ✨ Features
