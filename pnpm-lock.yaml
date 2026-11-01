@@ -15,8 +15,8 @@ importers:
         specifier: ^1.5.3
         version: 1.5.3(leaflet@2.0.0-alpha)
       simpleheat:
-        specifier: ^0.4.0
-        version: 0.4.0
+        specifier: ^1.0.0
+        version: 1.0.0
     devDependencies:
       '@maxel01/vue-leaflet':
         specifier: ^1.0.0-beta.8
@@ -4577,6 +4577,9 @@ packages:
 
   simpleheat@0.4.0:
     resolution: {integrity: sha512-tdg3I1NvzMdPKscWBrHbF0LBf+VWuBBazzGUPtFJjG5Q12VQX6gPY8jLy9hx5CbgAIVc5nfnePwJvAYK6z1rAA==}
+
+  simpleheat@1.0.0:
+    resolution: {integrity: sha512-hCGl1lj+IR+CymAouYf5ZQ7NguSQq+w1PWu1WvHgZWkdzmyS/xbN1T2TpwlSC8nEDDK2JRVPcdgV0a6652aP2Q==}
 
   sirv@3.0.2:
     resolution: {integrity: sha512-2wcC/oGxHis/BoHkkPwldgiPSYcpZK3JU28WoMVv55yHJgcZ8rlXvuG9iZggz+sU1d4bRgIGASwyWqjxu3FM0g==}
@@ -10666,6 +10669,8 @@ snapshots:
   signal-exit@4.1.0: {}
 
   simpleheat@0.4.0: {}
+
+  simpleheat@1.0.0: {}
 
   sirv@3.0.2:
     dependencies:
