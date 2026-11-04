@@ -1,5 +1,5 @@
 ---
-title: Leaflet.RotatedMarker
+title: Leaflet.MarkerCluster
 ---
 
 # 🔌 Leaflet.MarkerCluster

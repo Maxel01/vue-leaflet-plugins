@@ -1,6 +1,7 @@
 import { flushPromises, shallowMount, type VueWrapper } from '@vue/test-utils'
 import { describe, expect, it, vi } from 'vitest'
 import { LMarkerClusterGroup } from '@/leaflet.markercluster'
+import type { MarkerClusterGroup } from 'leaflet.markercluster'
 import { AddLayerInjection, HideLayerInjection, RemoveLayerInjection } from '@maxel01/vue-leaflet'
 import {
     featureGroupProps,
