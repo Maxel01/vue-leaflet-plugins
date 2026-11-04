@@ -2,7 +2,9 @@
   "name": "@maxel01/vue-leaflet-plugins",
   "version": "0.0.5",
   "license": "MIT",
-  "public": true,
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "module",
   "sideEffects": false,
   "main": "dist/vue-leaflet-plugins.cjs.js",
