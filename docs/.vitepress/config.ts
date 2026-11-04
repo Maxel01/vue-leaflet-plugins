@@ -67,10 +67,6 @@ export default defineConfig({
                     {
                         text: 'Leaflet.MarkerCluster',
                         link: '/plugins/leaflet.markercluster/'
-                    },
-                    {
-                        text: 'Leaflet.RotatedMarker',
-                        link: '/plugins/leaflet.rotatedmarker/'
                     }
                 ]
             },

@@ -13,8 +13,6 @@
             <RouterLink to="/leaflet.hotline/hotline">LHotline</RouterLink>
             <RouterLink to="/leaflet.markercluster">Leaflet.MarkerCluster</RouterLink>
             <RouterLink to="/leaflet.markercluster/marker-cluster-group">LMarkerClusterGroup</RouterLink>
-            <RouterLink to="/leaflet.rotatedmarker">Leaflet.RotatedMarker</RouterLink>
-            <RouterLink to="/leaflet.rotatedmarker/rotated-marker">LRotatedMarker</RouterLink>
         </div>
         <div class="map-wrapper">
             <RouterView />

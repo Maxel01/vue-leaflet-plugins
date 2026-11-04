@@ -30,8 +30,7 @@ The following plugins are currently wrapped and ready for use:
 ☑️ [Leaflet.Donut](https://github.com/Falke-Design/L.Donut) (draw donuts) \
 ☑️ [Leaflet.heat](https://github.com/Leaflet/Leaflet.heat) (heatmap layer) \
 ☑️ [Leaflet.hotline](https://github.com/iosphere/Leaflet.hotline) (heatmap-style polylines) \
-☑️ [Leaflet.MarkerCluster](https://github.com/Leaflet/Leaflet.markercluster) (animated marker clustering) \
-☑️ [Leaflet.RotatedMarker](https://github.com/bbecquet/Leaflet.RotatedMarker) (rotate markers)
+☑️ [Leaflet.MarkerCluster](https://github.com/Leaflet/Leaflet.markercluster) (animated marker clustering)
 
 More plugins will be added over time. If you need a specific plugin, open a request in the repo.
 
