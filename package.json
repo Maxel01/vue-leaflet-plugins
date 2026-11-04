@@ -87,7 +87,8 @@
     "vue-tsc": "^3.3.11"
   },
   "dependencies": {
+    "leaflet.heat": "^1.0.0",
     "leaflet.markercluster": "^2.0.0-beta.1",
-    "simpleheat": "^0.4.0"
+    "simpleheat": "^1.0.0"
   }
 }
