@@ -46,7 +46,7 @@ function useHotline() {
             ...props,
             ...methods,
             leafletObject: leafletObject.value
-        })
+        } as unknown as Parameters<typeof addLayer>[0])
         ready.value = true
         nextTick(() => emit('ready', leafletObject.value!))
     })

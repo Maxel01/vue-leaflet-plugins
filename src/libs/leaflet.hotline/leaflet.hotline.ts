@@ -24,17 +24,18 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
+import type { LineString, MultiLineString } from 'geojson'
 import {
     type Bounds,
     Canvas,
+    type InteractiveLayerEventMap,
     LatLng,
     type LatLngExpression,
     LineUtil,
-    type Map,
+    type LeafletMap,
     Point,
     Polyline,
-    type PolylineOptions,
-    type Renderer
+    type PolylineOptions
 } from 'leaflet'
 
 declare module 'leaflet' {
@@ -176,7 +177,7 @@ class HotlineCanvasRenderer extends Canvas {
         this._palette = new HotlinePalette()
     }
 
-    _updatePoly(layer: Hotline) {
+    _updatePoly(layer: any, _closed?: boolean) {
         if (!this._drawing) {
             return
         }
@@ -272,7 +273,7 @@ class HotlineCanvasRenderer extends Canvas {
 }
 
 export interface HotlineOptions extends PolylineOptions {
-    renderer?: Renderer
+    renderer?: any
     weight?: number
     outlineWidth?: number
     outlineColor?: string
@@ -281,11 +282,14 @@ export interface HotlineOptions extends PolylineOptions {
     palette?: ColorPalette
 }
 
-export class Hotline extends Polyline {
-    declare options: HotlineOptions
+export class Hotline extends Polyline<
+    HotlineOptions,
+    InteractiveLayerEventMap,
+    LineString | MultiLineString
+> {
     declare _parts: Point[][]
     declare _rings: Point[][]
-    declare _renderer: HotlineCanvasRenderer
+    declare _renderer: any
 
     static defaultOptions = {
         weight: 5,
@@ -304,9 +308,10 @@ export class Hotline extends Polyline {
         super(latlngs, { ...Hotline.defaultOptions, ...options })
     }
 
-    beforeAdd(map: Map): this {
+    beforeAdd(map: LeafletMap): this {
         this.options.renderer = new HotlineCanvasRenderer(this.options)
-        return super.beforeAdd!(map)
+        super.beforeAdd?.(map)
+        return this
     }
 
     setStyle(style: HotlineOptions): this {
