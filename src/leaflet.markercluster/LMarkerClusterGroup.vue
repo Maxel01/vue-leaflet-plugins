@@ -1,15 +1,14 @@
 <script setup lang="ts">
 import { markRaw, nextTick, onMounted, ref, useAttrs } from 'vue'
 import { AddLayerInjection, assertInject, propsBinder, remapEvents } from '@maxel01/vue-leaflet'
+import { MarkerClusterGroup } from 'leaflet.markercluster'
 import {
     setupMarkerClusterGroup,
     type MarkerClusterGroupProps,
     markerClusterGroupPropsDefaults,
     type MarkerClusterGroupEmits
 } from './markerClusterGroup'
-import { prepareMarkerClusterPolyfill } from '@/utils/polyfill'
 
-import 'leaflet.markercluster/dist/MarkerCluster.css'
 import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
 
 /**
@@ -44,9 +43,7 @@ function useMarkerClusterGroup() {
     const { options, methods } = setupMarkerClusterGroup(props, leafletObject, emit)
 
     onMounted(async () => {
-        prepareMarkerClusterPolyfill()
-        await import('leaflet.markercluster')
-        leafletObject.value = markRaw(new L.MarkerClusterGroup(options))
+        leafletObject.value = markRaw(new MarkerClusterGroup(options))
 
         const { listeners } = remapEvents(attrs)
         leafletObject.value.on(listeners)
@@ -57,7 +54,7 @@ function useMarkerClusterGroup() {
             ...props,
             ...methods,
             leafletObject: leafletObject.value
-        })
+        } as unknown as Parameters<typeof addLayer>[0])
         ready.value = true
         nextTick(() => emit('ready', leafletObject.value!))
     })
