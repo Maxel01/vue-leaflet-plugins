@@ -1,4 +1,4 @@
-import { type PolylineOptions } from 'leaflet'
+import { type Polyline, type PolylineOptions } from 'leaflet'
 
 import type { Ref } from 'vue'
 import type { ColorPalette, Hotline } from '@/libs/leaflet.hotline/leaflet.hotline'
@@ -45,7 +45,7 @@ export const hotlinePropsDefaults = {
 }
 
 /* eslint-disable-next-line @typescript-eslint/no-empty-object-type */
-export interface HotlineEmits<T extends Hotline = Hotline> extends PolylineEmits<T> {}
+export interface HotlineEmits extends PolylineEmits {}
 
 export const setupHotline = (
     props: HotlineProps,
@@ -54,8 +54,8 @@ export const setupHotline = (
 ) => {
     const { options: polylineOptions, methods: polylineMethods } = setupPolyline(
         props,
-        leafletRef,
-        emit
+        leafletRef as Ref<Polyline | undefined>,
+        emit as unknown as PolylineEmits
     )
 
     const options = propsToLeafletOptions<PolylineOptions>(props, polylineOptions)
