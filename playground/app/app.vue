@@ -13,8 +13,6 @@
             <NuxtLink to="/leaflet.hotline/hotline">LHotline</NuxtLink>
             <NuxtLink to="/leaflet.markercluster">Leaflet.MarkerCluster</NuxtLink>
             <NuxtLink to="/leaflet.markercluster/marker-cluster-group">LMarkerClusterGroup</NuxtLink>
-            <NuxtLink to="/leaflet.rotatedmarker">Leaflet.RotatedMarker</NuxtLink>
-            <NuxtLink to="/leaflet.rotatedmarker/rotated-marker">LRotatedMarker</NuxtLink>
         </div>
         <div class="map-wrapper">
             <NuxtPage />
