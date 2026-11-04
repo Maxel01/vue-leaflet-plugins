@@ -11,12 +11,15 @@ importers:
       leaflet:
         specifier: ^2.0.0-beta.1
         version: 2.0.0-beta.1
+      leaflet.heat:
+        specifier: ^1.0.0
+        version: 1.0.0(leaflet@2.0.0-beta.1)
       leaflet.markercluster:
         specifier: ^2.0.0-beta.1
         version: 2.0.0-beta.1(leaflet@2.0.0-beta.1)
       simpleheat:
-        specifier: ^0.4.0
-        version: 0.4.0
+        specifier: ^1.0.0
+        version: 1.0.0
     devDependencies:
       '@maxel01/vue-leaflet':
         specifier: ^1.0.0-beta.9
@@ -3646,6 +3649,11 @@ packages:
     resolution: {integrity: sha512-b94GiNHQNy6JNTrt5w6zNyffMrNkXZb3KTkCZJb2V1xaEGCk093vkZ2jk3tpaeP33/OiXC+WvK9AxUebnf5nbw==}
     engines: {node: '>= 0.6.3'}
 
+  leaflet.heat@1.0.0:
+    resolution: {integrity: sha512-sjEmSRlT6XdrftqVkS/+bS+bM36Px4QsZhDlgABY3udZobCs+6VRYvWyhMloznr6dBk9sDbR4ZDuWcLoakwSDg==}
+    peerDependencies:
+      leaflet: ^1.9.0 || ^2.0.0-beta.1
+
   leaflet.markercluster@1.5.3:
     resolution: {integrity: sha512-vPTw/Bndq7eQHjLBVlWpnGeLa3t+3zGiuM7fJwCkiMFq+nmRuG3RI3f7f4N4TDX7T4NpbAXpR2+NTRSEGfCSeA==}
     peerDependencies:
@@ -4574,6 +4582,9 @@ packages:
 
   simpleheat@0.4.0:
     resolution: {integrity: sha512-tdg3I1NvzMdPKscWBrHbF0LBf+VWuBBazzGUPtFJjG5Q12VQX6gPY8jLy9hx5CbgAIVc5nfnePwJvAYK6z1rAA==}
+
+  simpleheat@1.0.0:
+    resolution: {integrity: sha512-hCGl1lj+IR+CymAouYf5ZQ7NguSQq+w1PWu1WvHgZWkdzmyS/xbN1T2TpwlSC8nEDDK2JRVPcdgV0a6652aP2Q==}
 
   sirv@3.0.2:
     resolution: {integrity: sha512-2wcC/oGxHis/BoHkkPwldgiPSYcpZK3JU28WoMVv55yHJgcZ8rlXvuG9iZggz+sU1d4bRgIGASwyWqjxu3FM0g==}
@@ -9438,6 +9449,11 @@ snapshots:
     dependencies:
       readable-stream: 2.3.8
 
+  leaflet.heat@1.0.0(leaflet@2.0.0-beta.1):
+    dependencies:
+      leaflet: 2.0.0-beta.1
+      simpleheat: 1.0.0
+
   leaflet.markercluster@1.5.3(leaflet@2.0.0-beta.1):
     dependencies:
       leaflet: 2.0.0-beta.1
@@ -10665,6 +10681,8 @@ snapshots:
   signal-exit@4.1.0: {}
 
   simpleheat@0.4.0: {}
+
+  simpleheat@1.0.0: {}
 
   sirv@3.0.2:
     dependencies:

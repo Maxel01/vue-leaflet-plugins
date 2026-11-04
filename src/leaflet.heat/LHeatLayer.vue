@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { markRaw, nextTick, onMounted, ref, useAttrs } from 'vue'
 import { AddLayerInjection, assertInject, propsBinder, remapEvents } from '@maxel01/vue-leaflet'
-
-import { HeatLayer } from '@/libs/leaflet.heat/leaflet.heat'
+import { HeatLayer } from 'leaflet.heat'
 import {
     type HeatLayerEmits,
     type HeatLayerProps,

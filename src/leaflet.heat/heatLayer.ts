@@ -6,15 +6,15 @@ import {
     propsToLeafletOptions,
     setupLayer
 } from '@maxel01/vue-leaflet'
-import type { HeatLayer, HeatLayerOptions } from '@/libs/leaflet.heat/leaflet.heat.ts'
-import type { LatLng } from 'leaflet'
+import type { HeatLayer, HeatLayerOptions, HeatLatLng } from 'leaflet.heat'
+import type { HeatGradient } from 'simpleheat'
 
 export interface HeatLayerProps extends LayerProps {
     /**
      * LatLngs of the heat map
      * @reactive
      */
-    latLngs: LatLng[]
+    latLngs: HeatLatLng[]
     /**
      * the minimum opacity the heat will start at
      * @reactive
@@ -44,7 +44,7 @@ export interface HeatLayerProps extends LayerProps {
      *  color gradient config, e.g. `{0.4: 'blue', 0.65: 'lime', 1: 'red'}`
      * @reactive
      */
-    gradient?
+    gradient?: HeatGradient
 }
 
 export const heatLayerPropsDefaults = {
@@ -84,7 +84,7 @@ export const setupHeatLayer = (
         setMax: (max: number) => {
             leafletRef.value?.setOptions({ max })
         },
-        setGradient: (gradient) => {
+        setGradient: (gradient: HeatGradient) => {
             leafletRef.value?.setOptions({ gradient })
         }
     }

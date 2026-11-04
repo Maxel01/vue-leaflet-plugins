@@ -14,7 +14,7 @@ import {
 } from '@maxel01/vue-leaflet/tests'
 import { AddLayerInjection, HideLayerInjection, RemoveLayerInjection } from '@maxel01/vue-leaflet'
 import { LHeatLayer } from '@/leaflet.heat'
-import type { HeatLayer } from '@/libs/leaflet.heat/leaflet.heat.ts'
+import type { HeatLayer } from 'leaflet.heat'
 
 const heatLayerProps = mergeReactiveProps(layerProps, {
     latLngs: [
