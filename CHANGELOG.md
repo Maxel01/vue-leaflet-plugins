@@ -1,5 +1,30 @@
 # Changelog
 
+## [0.0.6](https://github.com/Maxel01/vue-leaflet-plugins/compare/v0.0.5...v0.0.6) (2026-11-07)
+
+### ⚠ BREAKING CHANGES
+
+* **map:** Hotline beforeAdd expects LeafletMap instance instead of Map.
+* **rotatedmarker:** LRotatedMarker has been removed as Leaflet 2 natively supports marker rotation via the 'rotation' option.
+
+### ✨ Features
+
+* **heat:** migrate to official leaflet.heat 1.0.0 package ([fbdc48a](https://github.com/Maxel01/vue-leaflet-plugins/commit/fbdc48aac5d7cce99f8b87d9e603887d826766d4))
+* **markercluster:** upgrade leaflet.markercluster to 2.0.0-beta.1 and remove legacy polyfills ([9e39af2](https://github.com/Maxel01/vue-leaflet-plugins/commit/9e39af22335909263523afaebe153b73bf00b007))
+* upgrade to leaflet@2.0.0-beta.1 ([6a79583](https://github.com/Maxel01/vue-leaflet-plugins/commit/6a79583837157118cab678879dc6a879e5fc7d7a))
+
+### ♻️ Refactoring
+
+* **config:** consolidate tsconfig files into single root tsconfig ([#240](https://github.com/Maxel01/vue-leaflet-plugins/issues/240)) ([19bd697](https://github.com/Maxel01/vue-leaflet-plugins/commit/19bd69763d4db1352c1a4bc2160f91e2568ef56c))
+* **config:** consolidate vite and vitest configurations into single vite.config ([#241](https://github.com/Maxel01/vue-leaflet-plugins/issues/241)) ([9067ff5](https://github.com/Maxel01/vue-leaflet-plugins/commit/9067ff5997b7922c2480a591550f2b7d2b401013))
+* **map:** replace Map with LeafletMap in Hotline ([43d7ef3](https://github.com/Maxel01/vue-leaflet-plugins/commit/43d7ef341f9ff47dda63b143236beae08625301e))
+* **rotatedmarker:** remove deprecated RotatedMarker plugin ([e46caf6](https://github.com/Maxel01/vue-leaflet-plugins/commit/e46caf6d77ad00ede1919e525043dea9f7a27ba7))
+
+### 🚧 Chores
+
+* **docs:** remove simpleanalytics script from head config ([#239](https://github.com/Maxel01/vue-leaflet-plugins/issues/239)) ([512e0ad](https://github.com/Maxel01/vue-leaflet-plugins/commit/512e0ad1ad7415a530aaa7be28daadb86b87e48f))
+* improvements to CI, playgrounds, alias config and package metadata ([#242](https://github.com/Maxel01/vue-leaflet-plugins/issues/242)) ([56f5ef7](https://github.com/Maxel01/vue-leaflet-plugins/commit/56f5ef797e4179d2d8bafc84ac002ff3f645a00e))
+
 ## [0.0.5](https://github.com/Maxel01/vue-leaflet-plugins/compare/v0.0.4...v0.0.5) (2026-09-25)
 
 ### 🐛 Bug Fixes
