@@ -1,5 +1,6 @@
+import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vitepress'
-import { alias } from '../../alias.config'
+import { alias } from '../../alias.config.ts'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -13,8 +14,10 @@ export default defineConfig({
         },
         resolve: {
             alias: {
-                ...alias,
-                '@maxel01/vue-leaflet-plugins': '@dist/vue-leaflet-plugins'
+                '@maxel01/vue-leaflet-plugins': fileURLToPath(
+                    new URL('../../src/plugins.ts', import.meta.url)
+                ),
+                ...alias
             }
         }
     },

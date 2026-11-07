@@ -2,7 +2,7 @@ import { fileURLToPath, URL } from 'node:url'
 import vue from '@vitejs/plugin-vue'
 import dts from 'unplugin-dts/vite'
 import { configDefaults, defineConfig } from 'vitest/config'
-import { alias } from './alias.config'
+import { alias } from './alias.config.ts'
 
 // https://vite.dev/config/
 export default defineConfig({
