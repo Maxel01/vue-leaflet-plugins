@@ -37,7 +37,8 @@ export default defineConfig({
         exclude: [
             ...configDefaults.exclude,
             'e2e/**',
-            'node_modules' /*, 'tests/exports/**' */
+            'node_modules',
+            'tests/leaflet.donut/**' /*, 'tests/exports/**' */
         ],
         root: fileURLToPath(new URL('./', import.meta.url)),
         coverage: {

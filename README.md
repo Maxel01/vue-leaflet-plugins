@@ -6,7 +6,7 @@
 [![Vue][vue-src]][vue-href]
 [![Leaflet][leaflet-src]][leaflet-href]
 
-A modern Vue 3 wrapper for **Leaflet v2-alpha plugins**, extending [vue-leaflet](https://github.com/Maxel01/vue-leaflet).
+A modern Vue 3 wrapper for **Leaflet v2 plugins**, extending [vue-leaflet](https://github.com/Maxel01/vue-leaflet).
 Built with the Composition API, SSR-compatible, and designed to integrate seamlessly with the Vue-Leaflet ecosystem.
 
 > ⚠️ This is an **early-stage project**. Only a few plugins are supported yet — contributions and requests are welcome via [issues](https://github.com/Maxel01/vue-leaflet-plugins/issues) or [discussions](https://github.com/Maxel01/vue-leaflet-plugins/discussions).
@@ -43,11 +43,11 @@ More plugins will be added over time. If you need a specific plugin, open a requ
 ## 📦 Installation
 
 ```bash
-pnpm add @maxel01/vue-leaflet-plugins @maxel01/vue-leaflet leaflet@2.0.0-alpha
+pnpm add @maxel01/vue-leaflet-plugins @maxel01/vue-leaflet leaflet@^2.0.0-beta.1
 # or
-yarn add @maxel01/vue-leaflet-plugins @maxel01/vue-leaflet leaflet@2.0.0-alpha
+yarn add @maxel01/vue-leaflet-plugins @maxel01/vue-leaflet leaflet@^2.0.0-beta.1
 # or
-npm i @maxel01/vue-leaflet-plugins @maxel01/vue-leaflet leaflet@2.0.0-alpha
+npm i @maxel01/vue-leaflet-plugins @maxel01/vue-leaflet leaflet@^2.0.0-beta.1
 ```
 ---
 
@@ -95,7 +95,7 @@ To run the **Nuxt Playground** locally:
 
 ```bash
 git clone https://github.com/maxel01/vue-leaflet-plugins.git
-cd vue-leaflet
+cd vue-leaflet-plugins
 pnpm install
 pnpm dev
 ```

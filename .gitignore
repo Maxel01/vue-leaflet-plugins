@@ -18,6 +18,7 @@ node_modules
 dist
 dist-ssr
 coverage
+.coverage
 *.local
 docs/.vitepress/cache
 docs/plugins/**/l-*.md

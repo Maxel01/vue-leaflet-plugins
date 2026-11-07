@@ -30,6 +30,12 @@ export const donutPropsDefaults = {
     innerRadiusAsPercent: false
 }
 
+export interface DonutOptions {
+    radius?: number
+    innerRadius?: number
+    innerRadiusAsPercent?: boolean
+}
+
 /* eslint-disable-next-line @typescript-eslint/no-empty-object-type */
 export interface DonutEmits extends CircleEmits {}
 
@@ -45,8 +51,11 @@ export const setupDonut = (
     const methods = {
         ...circleMethods,
         setInnerRadiusAsPercent(innerRadius: boolean) {
-            leafletRef.value.options.innerRadiusAsPercent = innerRadius
-            leafletRef.value.redraw()
+            if (leafletRef.value) {
+                ;(leafletRef.value.options as unknown as DonutOptions).innerRadiusAsPercent =
+                    innerRadius
+                leafletRef.value.redraw()
+            }
         }
     }
 
