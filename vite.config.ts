@@ -1,8 +1,7 @@
 import { fileURLToPath, URL } from 'node:url'
-
-import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import dts from 'unplugin-dts/vite'
+import { configDefaults, defineConfig } from 'vitest/config'
 import { alias } from './alias.config'
 
 // https://vite.dev/config/
@@ -31,6 +30,20 @@ export default defineConfig({
                     '@maxel01/vue-leaflet': 'vue-leaflet'
                 }
             }
+        }
+    },
+    test: {
+        environment: 'jsdom',
+        exclude: [
+            ...configDefaults.exclude,
+            'e2e/**',
+            'node_modules' /*, 'tests/exports/**' */
+        ],
+        root: fileURLToPath(new URL('./', import.meta.url)),
+        coverage: {
+            provider: 'v8',
+            include: ['src/**'],
+            exclude: ['src/libs', 'src/**/libs', 'src/plugin-template']
         }
     }
 })
