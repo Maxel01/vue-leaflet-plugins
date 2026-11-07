@@ -6,7 +6,7 @@ import { alias } from './alias.config.ts'
 
 // https://vite.dev/config/
 export default defineConfig({
-    plugins: [vue(), dts({ tsconfigPath: './tsconfig.build.json' })],
+    plugins: [vue(), dts()],
     resolve: {
         alias
     },
