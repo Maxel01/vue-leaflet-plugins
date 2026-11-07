@@ -9,24 +9,24 @@ importers:
   .:
     dependencies:
       leaflet:
-        specifier: 2.0.0-alpha
-        version: 2.0.0-alpha
+        specifier: ^2.0.0-beta.1
+        version: 2.0.0-beta.1
       leaflet.markercluster:
         specifier: ^1.5.3
-        version: 1.5.3(leaflet@2.0.0-alpha)
+        version: 1.5.3(leaflet@2.0.0-beta.1)
       simpleheat:
         specifier: ^0.4.0
         version: 0.4.0
     devDependencies:
       '@maxel01/vue-leaflet':
-        specifier: ^1.0.0-beta.8
-        version: 1.0.0-beta.8(leaflet@2.0.0-alpha)(vue@3.5.43(typescript@6.0.3))
+        specifier: ^1.0.0-beta.9
+        version: 1.0.0-beta.9(leaflet@2.0.0-beta.1)(vue@3.5.43(typescript@6.0.3))
       '@release-it/conventional-changelog':
         specifier: ^12.0.2
         version: 12.0.2(conventional-commits-filter@6.0.1)(conventional-commits-parser@7.1.2)(release-it@21.1.0(@types/node@26.6.3)(magicast@0.5.4)(supports-color@10.2.2))
-      '@types/leaflet':
-        specifier: ^1.9.20
-        version: 1.9.21
+      '@types/geojson':
+        specifier: ^7946.0.16
+        version: 7946.0.16
       '@types/leaflet.markercluster':
         specifier: ^1.5.6
         version: 1.5.6
@@ -115,14 +115,14 @@ importers:
         specifier: link:..
         version: link:..
       '@maxel01/vue-leaflet':
-        specifier: 1.0.0-beta.8
-        version: 1.0.0-beta.8(leaflet@2.0.0-alpha)(vue@3.5.43(typescript@6.0.3))
+        specifier: 1.0.0-beta.9
+        version: 1.0.0-beta.9(leaflet@2.0.0-beta.1)(vue@3.5.43(typescript@6.0.3))
       '@maxel01/vue-leaflet-plugins':
         specifier: 0.0.4
-        version: 0.0.4(@maxel01/vue-leaflet@1.0.0-beta.8(leaflet@2.0.0-alpha)(vue@3.5.43(typescript@6.0.3)))(leaflet@2.0.0-alpha)(vue@3.5.43(typescript@6.0.3))
+        version: 0.0.4(@maxel01/vue-leaflet@1.0.0-beta.9(leaflet@2.0.0-beta.1)(vue@3.5.43(typescript@6.0.3)))(leaflet@2.0.0-beta.1)(vue@3.5.43(typescript@6.0.3))
       leaflet:
-        specifier: 2.0.0-alpha
-        version: 2.0.0-alpha
+        specifier: ^2.0.0-beta.1
+        version: 2.0.0-beta.1
       nuxt:
         specifier: ^4.6.3
         version: 4.6.3(@babel/plugin-proposal-decorators@7.29.7(@babel/core@7.29.7(supports-color@10.2.2))(supports-color@10.2.2))(@babel/plugin-syntax-jsx@7.29.7(@babel/core@7.29.7(supports-color@10.2.2)))(@babel/plugin-syntax-typescript@7.29.7(@babel/core@7.29.7(supports-color@10.2.2)))(@oxc-project/types@0.151.0)(@parcel/watcher@2.5.6)(@types/node@26.6.3)(@vue/compiler-sfc@3.5.43)(acorn@8.18.0)(confbox@0.3.2)(db0@0.3.4)(dotenv@17.4.2)(esbuild@0.28.2)(eslint@10.13.0(jiti@2.7.0)(supports-color@10.2.2))(giget@3.3.1)(ioredis@5.11.1(supports-color@10.2.2))(lightningcss@1.33.0)(magicast@0.5.5)(meow@13.2.0)(mlly@1.8.2)(optionator@0.9.4)(rolldown@1.2.15)(rollup-plugin-visualizer@7.1.1(rolldown@1.2.15)(rollup@4.66.0))(rollup@4.66.0)(srvx@1.0.8)(supports-color@10.2.2)(terser@5.50.0)(typescript@6.0.3)(vite@8.3.5(@types/node@26.6.3)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0))(vue-tsc@3.3.11(typescript@6.0.3))(yaml@2.9.0)
@@ -136,14 +136,14 @@ importers:
   playground-vue:
     dependencies:
       '@maxel01/vue-leaflet':
-        specifier: 1.0.0-beta.8
-        version: 1.0.0-beta.8(leaflet@2.0.0-alpha)(vue@3.5.43(typescript@6.0.3))
+        specifier: 1.0.0-beta.9
+        version: 1.0.0-beta.9(leaflet@2.0.0-beta.1)(vue@3.5.43(typescript@6.0.3))
       '@maxel01/vue-leaflet-plugins':
         specifier: 0.0.4
-        version: 0.0.4(@maxel01/vue-leaflet@1.0.0-beta.8(leaflet@2.0.0-alpha)(vue@3.5.43(typescript@6.0.3)))(leaflet@2.0.0-alpha)(vue@3.5.43(typescript@6.0.3))
+        version: 0.0.4(@maxel01/vue-leaflet@1.0.0-beta.9(leaflet@2.0.0-beta.1)(vue@3.5.43(typescript@6.0.3)))(leaflet@2.0.0-beta.1)(vue@3.5.43(typescript@6.0.3))
       leaflet:
-        specifier: 2.0.0-alpha
-        version: 2.0.0-alpha
+        specifier: ^2.0.0-beta.1
+        version: 2.0.0-beta.1
       vue:
         specifier: ^3.5.43
         version: 3.5.43(typescript@6.0.3)
@@ -870,10 +870,10 @@ packages:
       leaflet: 2.0.0-alpha
       vue: ^3.5.0
 
-  '@maxel01/vue-leaflet@1.0.0-beta.8':
-    resolution: {integrity: sha512-z2kHWbg1k6p1/C5jGg04O5OZ0NZYGfXsdLnZ7CAJctlWG7fSqzJpL2x66SUi42oM9qvLOJ4Ct0PMbE4UO/W3TA==}
+  '@maxel01/vue-leaflet@1.0.0-beta.9':
+    resolution: {integrity: sha512-Ia+OZs8wsX8TxBnVhzW55vcfrxp5N5saXYR38vWV3zo/+yYJw2JMS2aAGORO32Wd2hUIg576uUdRJ5NwHdx8/A==}
     peerDependencies:
-      leaflet: ^2.0.0-alpha
+      leaflet: ^2.0.0-beta.1
       vue: ^3.5.0
 
   '@napi-rs/lzma-linux-x64-gnu@1.5.1':
@@ -1721,8 +1721,8 @@ packages:
   '@types/leaflet.markercluster@1.5.6':
     resolution: {integrity: sha512-I7hZjO2+isVXGYWzKxBp8PsCzAYCJBc29qBdFpquOCkS7zFDqUsUvkEOyQHedsk/Cy5tocQzf+Ndorm5W9YKTQ==}
 
-  '@types/leaflet@1.9.21':
-    resolution: {integrity: sha512-TbAd9DaPGSnzp6QvtYngntMZgcRk+igFELwR2N99XZn7RXUdKgsXMR+28bUO0rPsWp8MIu/f47luLIQuSLYv/w==}
+  '@types/leaflet@1.9.22':
+    resolution: {integrity: sha512-h3lhECYEKDasG7LFHu+GiHqAvsgLuQvlJvVZzJDGONo3sEL+wUOqSFLnwkZlK0qVxnxbuGFW8iBlJNYs5wgndA==}
 
   '@types/linkify-it@5.0.0':
     resolution: {integrity: sha512-sVDA58zAw4eWAffKOaQH5/5j3XeayukzDk+ewSsnv3p4yJEZHCCzMDiZM8e0OUrRvmpGZ85jf4yDHkHsgBNr9Q==}
@@ -3660,8 +3660,8 @@ packages:
     peerDependencies:
       leaflet: ^1.3.1
 
-  leaflet@2.0.0-alpha:
-    resolution: {integrity: sha512-RnEJ3UYcuHPFFsDq0e2/QovyIaR3hhwiQpq3wrKnvprA/lsiAJpcxvkRZL3UwQ2xnKm1r2pYcMa+rcSKVwEQag==}
+  leaflet@2.0.0-beta.1:
+    resolution: {integrity: sha512-CfEZEKWiksxVmTMn30OQZVfn2inJruglgRajUGP3euWtxYrrSUxMh0Q3i50DVUQ30JeToybdaItgbwSa1D57CQ==}
 
   levn@0.4.1:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
@@ -6343,17 +6343,17 @@ snapshots:
       - encoding
       - supports-color
 
-  '@maxel01/vue-leaflet-plugins@0.0.4(@maxel01/vue-leaflet@1.0.0-beta.8(leaflet@2.0.0-alpha)(vue@3.5.43(typescript@6.0.3)))(leaflet@2.0.0-alpha)(vue@3.5.43(typescript@6.0.3))':
+  '@maxel01/vue-leaflet-plugins@0.0.4(@maxel01/vue-leaflet@1.0.0-beta.9(leaflet@2.0.0-beta.1)(vue@3.5.43(typescript@6.0.3)))(leaflet@2.0.0-beta.1)(vue@3.5.43(typescript@6.0.3))':
     dependencies:
-      '@maxel01/vue-leaflet': 1.0.0-beta.8(leaflet@2.0.0-alpha)(vue@3.5.43(typescript@6.0.3))
-      leaflet: 2.0.0-alpha
-      leaflet.markercluster: 1.5.3(leaflet@2.0.0-alpha)
+      '@maxel01/vue-leaflet': 1.0.0-beta.9(leaflet@2.0.0-beta.1)(vue@3.5.43(typescript@6.0.3))
+      leaflet: 2.0.0-beta.1
+      leaflet.markercluster: 1.5.3(leaflet@2.0.0-beta.1)
       simpleheat: 0.4.0
       vue: 3.5.43(typescript@6.0.3)
 
-  '@maxel01/vue-leaflet@1.0.0-beta.8(leaflet@2.0.0-alpha)(vue@3.5.43(typescript@6.0.3))':
+  '@maxel01/vue-leaflet@1.0.0-beta.9(leaflet@2.0.0-beta.1)(vue@3.5.43(typescript@6.0.3))':
     dependencies:
-      leaflet: 2.0.0-alpha
+      leaflet: 2.0.0-beta.1
       vue: 3.5.43(typescript@6.0.3)
 
   '@napi-rs/lzma-linux-x64-gnu@1.5.1':
@@ -7340,9 +7340,9 @@ snapshots:
 
   '@types/leaflet.markercluster@1.5.6':
     dependencies:
-      '@types/leaflet': 1.9.21
+      '@types/leaflet': 1.9.22
 
-  '@types/leaflet@1.9.21':
+  '@types/leaflet@1.9.22':
     dependencies:
       '@types/geojson': 7946.0.16
 
@@ -9450,11 +9450,13 @@ snapshots:
     dependencies:
       readable-stream: 2.3.8
 
-  leaflet.markercluster@1.5.3(leaflet@2.0.0-alpha):
+  leaflet.markercluster@1.5.3(leaflet@2.0.0-beta.1):
     dependencies:
-      leaflet: 2.0.0-alpha
+      leaflet: 2.0.0-beta.1
 
-  leaflet@2.0.0-alpha: {}
+  leaflet@2.0.0-beta.1:
+    dependencies:
+      '@types/geojson': 7946.0.16
 
   levn@0.4.1:
     dependencies:
