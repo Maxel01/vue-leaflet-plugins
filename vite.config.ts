@@ -6,7 +6,7 @@ import { alias } from './alias.config.ts'
 
 // https://vite.dev/config/
 export default defineConfig({
-    plugins: [vue(), dts()],
+    plugins: [vue(), dts({ include: ['src'] })],
     resolve: {
         alias
     },
@@ -16,19 +16,20 @@ export default defineConfig({
     build: {
         lib: {
             entry: fileURLToPath(new URL('./src/plugins.ts', import.meta.url)),
-            formats: ['es', 'cjs', 'umd'],
-            name: 'vue-leaflet-plugins',
-            fileName: (fmt) => `vue-leaflet-plugins.${fmt}.js`
+            formats: ['es', 'cjs'],
+            fileName: (fmt, name) => `${name}.${fmt === 'es' ? 'js' : 'cjs'}`
         },
         rolldownOptions: {
-            external: ['vue', 'leaflet', /^leaflet\/.*/, '@maxel01/vue-leaflet'],
+            external: (id) => {
+                if (id.endsWith('.css')) return false
+                return (
+                    ['vue', 'leaflet', 'simpleheat', '@maxel01/vue-leaflet'].includes(id) ||
+                    /^leaflet[\/|\.].*/.test(id)
+                )
+            },
             output: {
-                // Global variables for use in the UMD build
-                globals: {
-                    vue: 'Vue',
-                    leaflet: 'L',
-                    '@maxel01/vue-leaflet': 'vue-leaflet'
-                }
+                preserveModules: true,
+                preserveModulesRoot: 'src'
             }
         }
     },

@@ -11,15 +11,6 @@ importers:
       leaflet:
         specifier: ^2.0.0-beta.1
         version: 2.0.0-beta.1
-      leaflet.heat:
-        specifier: ^1.0.0
-        version: 1.0.0(leaflet@2.0.0-beta.1)
-      leaflet.markercluster:
-        specifier: ^2.0.0-beta.1
-        version: 2.0.0-beta.1(leaflet@2.0.0-beta.1)
-      simpleheat:
-        specifier: ^1.0.0
-        version: 1.0.0
     devDependencies:
       '@maxel01/vue-leaflet':
         specifier: ^1.0.0-beta.9
@@ -75,12 +66,21 @@ importers:
       jsdom:
         specifier: ^30.1.3
         version: 30.1.3
+      leaflet.heat:
+        specifier: ^1.0.0
+        version: 1.0.0(leaflet@2.0.0-beta.1)
+      leaflet.markercluster:
+        specifier: ^2.0.0-beta.1
+        version: 2.0.0-beta.1(leaflet@2.0.0-beta.1)
       prettier:
         specifier: ^3.9.10
         version: 3.9.10
       release-it:
         specifier: ^21.1.2
         version: 21.1.2(@types/node@26.6.6)(magicast@0.5.4)(supports-color@10.2.2)
+      simpleheat:
+        specifier: ^1.0.0
+        version: 1.0.0
       ts-morph:
         specifier: ^28.0.0
         version: 28.0.0
