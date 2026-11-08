@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.0.7](https://github.com/Maxel01/vue-leaflet-plugins/compare/v0.0.6...v0.0.7) (2026-11-08)
+
+### ✨ Features
+
+* **build:** enable preserveModules for tree-shaking and make plugin dependencies optional peerDependencies ([#247](https://github.com/Maxel01/vue-leaflet-plugins/issues/247)) ([a8efac4](https://github.com/Maxel01/vue-leaflet-plugins/commit/a8efac49d4cda7a248a0de35e4c244e263e2e4b8))
+
 ## [0.0.6](https://github.com/Maxel01/vue-leaflet-plugins/compare/v0.0.5...v0.0.6) (2026-11-07)
 
 ### ⚠ BREAKING CHANGES
